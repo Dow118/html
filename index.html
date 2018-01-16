@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>DB TEST</title>
+</head>
+<body>
+  <?php
+      include("./dbconnection.html");
+      $connect=dbconn();
+  ?>
+  <form action='./post.html' name='review_table' method='post'>
+<br>
+<br>
+<CENTER>DB로 전송할 값 입력받기</b></div><br>
+<form action="" method="post">
+<label>아 티 스 트 : </label><input type="text" name="song_artist" class="box"/><br>
+<label>이    름 : </label><input type="text" name="song_name" class="box"/></br>
+<label>주    소 : </label><input type="text" name="song_url" class="box"/>
+
+<center><input type="submit" value="DB로 전송"/><br />
+
+</form>
+</body>
+
+</html>
