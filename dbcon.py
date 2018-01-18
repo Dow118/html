@@ -10,4 +10,4 @@ curs.execute(sql)
 rows = curs.fetchall()
 print(rows)
 
-con.close()
+conn.close()
