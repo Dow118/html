@@ -7,7 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <title>DB TEST</title>
 </head>
-<body><h2><%='Hello, psp!'%></h2>
+<body><h2><%=import pymysql
+
+conn = pymysql.connect(host = 'localhost', user='root', password='111111', db='tutorials', charset='utf8')
+
+curs = conn.cursor()
+
+sql = "select * from info"
+curs.execute(sql)
+
+rows = curs.fetchall()
+print(rows)
+
+conn.close()%></h2>
   
 <br>
 <CENTER>DB로 전송할 값 입력받기</b></div><br>
