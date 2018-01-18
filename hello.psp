@@ -1,0 +1,21 @@
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>DB TEST</title>
+</head>
+<body><h2><%='Hello, psp!'%></h2>
+  
+<br>
+<CENTER>DB로 전송할 값 입력받기</b></div><br>
+<form action="" method="post">
+<label>아 티 스 트 : </label><input type="text" name="song_artist" class="box"/><br>
+<label>이    름 : </label><input type="text" name="song_name" class="box"/></br>
+<label>주    소 : </label><input type="text" name="song_url" class="box"/>
+
+<center><input type="submit" value="DB로 전송"/><br />
+
+</form>
+</body>
+
+</html>
