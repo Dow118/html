@@ -1,4 +1,5 @@
-<?php
+<html>
+  <?php
 $db_host = "localhost";
 $db_user = "root";
 $db_pw = "111111";
@@ -8,12 +9,27 @@ if($connect)
   echo "db is connected";
 else
   echo "db is not connected";
-$table = mysqli_query($connect, "select * from info");
-echo $table;
+$result = mysqli_query($connect, "select * from info");
+echo "<table border='1'>
+<tr>
+<th>No</ht>
+<th>Name</ht>
+<th>Artist</ht>
+<th>Url</ht>
+$no = 1;
+while($row=mysqli_fetch_array($result)){
+echo "<tr>";
+echo "<td>".$no."</td>";
+echo "<td>".$row[0]."</td>";
+echo "<td>".$row[1]."</td>";
+echo "<td>".$row[2]."</td>";
+echo "</tr>";
+$no++;
+}
+
+echo "</table>";
+mysqli_close($connect);
 ?>
-
-
-<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
@@ -22,7 +38,6 @@ echo $table;
   <body>
     <form method="post" action="dbconnection.php">
     <br><br>
-      <p align="center"> <?=$table?> ~목록</p>
     <CENTER>DB 곡 추가하기</b></div><br>
       <label>이    름 : </label><input type="text" name="song_name" class="box"/></br>
       <label>아 티 스 트 : </label><input type="text" name="song_artist" class="box"/><br>
