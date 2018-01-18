@@ -1,6 +1,6 @@
 import pymysql
 
-conn = pymysql.connect(host = 'localhost', user='root', password='111111', db='turorials', charset='utf8')
+conn = pymysql.connect(host = 'localhost', user='root', password='111111', db='tutorials', charset='utf8')
 
 curs = conn.cursor()
 
