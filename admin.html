@@ -12,10 +12,11 @@ else
 $result = mysqli_query($connect, "select * from info");
 echo "<table border='1'>
 <tr>
-<th>No</ht>
-<th>Name</ht>
-<th>Artist</ht>
-<th>Url</ht>
+<th>No</th>
+<th>Name</th>
+<th>Artist</th>
+<th>Url</th>
+</tr>";
 $no = 1;
 while($row=mysqli_fetch_array($result)){
 echo "<tr>";
