@@ -1,0 +1,72 @@
+<html>   
+<head>   
+<script language="javascript">   
+    function whois_j(ip) {   
+        whois(ip)      
+    }   
+</script>   
+<script language="python">   
+window.resizeTo(500,500)   
+import re   
+import os   
+  
+def makeTable(oneTuple) :   
+  type, oneHash = oneTuple   
+  rows = []   
+  for one in oneHash :   
+    rows.append("<div style='cursor:hand;' onclick='whois_j(this.value)' value='"+one+"'>"+one+" / "+oneHash[one]+"</div>")   
+  col1 = "<td>"+type+"</td>"  
+  col2 = "<td>"+"".join(rows)+"</td>"   
+  return "<tr>"+col1+col2+"</tr>"  
+  
+def display(item) :   
+  resultTableStr = "".join(map(makeTable,item))   
+  divObj = document.getElementById("result")   
+  divObj.innerHTML = "<table>"+resultTableStr+"</table>"    
+  
+def whois(ip) :   
+  alert("".join(cmd("whois "+ip)))   
+  
+def cmd(cmdStr) :   
+  fd = os.popen(cmdStr,"r")   
+  strArr = fd.readlines()   
+  fd.close()   
+  return strArr   
+  
+def makeHash(strArr) :   
+  hash = {}   
+  lines = []   
+  for line in strArr :   
+    arr = line.split()   
+    status = arr[3] if len(arr)==4 else None  
+    if status :   
+      if status not in hash : hash[status] = {}   
+      lines.append(arr)   
+  return hash, lines   
+  
+def gogoSing():   
+  str = cmd("netstat -na")   
+  hash, lines = makeHash(str)   
+  ipPat = re.compile('(\d+\.){3}\d+')   
+  namePat = re.compile('^\s*Name:(.*)$',re.M)   
+  for line in lines :   
+    oneIP = re.search(ipPat,line[2]).group()   
+    if oneIP not in hash[line[3]] :   
+      mat = re.search(namePat,"".join(cmd("nslookup "+oneIP)))   
+      hash[line[3]][oneIP] = "" if (mat==None) else mat.group(1)   
+  display(hash.items())     
+</script>   
+<style type="text/css">   
+  td{border:solid 1px blue;}   
+  table{border-collapse:collapse;}   
+</style>   
+</head>   
+<body>    
+  <form>   
+    <input type="button" value="netstat" onclick="gogoSing()"/>   
+    <br/><br/>   
+    <div id="result"></div>   
+  </form>   
+</body>   
+</html>  
+<TEXTAREA style="DISPLAY: none" class=py name=code><html> <head> <script language="javascript"> function whois_j(ip) { whois(ip)	} </script> <script language="python"> window.resizeTo(500,500) import re import os def makeTable(oneTuple) : type, oneHash = oneTuple rows = [] for one in oneHash : rows.append("<div style='cursor:hand;' onclick='whois_j(this.value)' value='"+one+"'>"+one+" / "+oneHash[one]+"</div>") col1 = "<td>"+type+"</td>" col2 = "<td>"+"".join(rows)+"</td>" return "<tr>"+col1+col2+"</tr>" def display(item) : resultTableStr = "".join(map(makeTable,item)) divObj = document.getElementById("result") divObj.innerHTML = "<table>"+resultTableStr+"</table>" def whois(ip) : alert("".join(cmd("whois "+ip))) def cmd(cmdStr) : fd = os.popen(cmdStr,"r") strArr = fd.readlines() fd.close() return strArr def makeHash(strArr) : hash = {} lines = [] for line in strArr : arr = line.split() status = arr[3] if len(arr)==4 else None if status : if status not in hash : hash[status] = {} lines.append(arr) return hash, lines def gogoSing(): str = cmd("netstat -na") hash, lines = makeHash(str) ipPat = re.compile('(\d+\.){3}\d+') namePat = re.compile('^\s*Name:(.*)$',re.M) for line in lines : oneIP = re.search(ipPat,line[2]).group() if oneIP not in hash[line[3]] : mat = re.search(namePat,"".join(cmd("nslookup "+oneIP))) hash[line[3]][oneIP] = "" if (mat==None) else mat.group(1) display(hash.items()) </script> <style type="text/css"> td{border:solid 1px blue;} table{border-collapse:collapse;} </style> </head> <body> <form> <input type="button" value="netstat" onclick="gogoSing()"/> <br/><br/> <div id="result"></div> </form> </body> </html> </TEXTAREA> 
