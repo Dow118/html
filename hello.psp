@@ -1,13 +1,15 @@
-import pymysql
+<html>  
+  <script = "javascript">
+  
+     request.getParameter("song_artist")
+     request.getParameter("song_name")
+     request.getParameter("song_url")
+     </script>
+    <head>
+      <h1> song_artist</h1>
+    </head>
 
-conn = pymysql.connect(host = 'localhost', user='root', password='111111', db='tutorials', charset='utf8')
-
-curs = conn.cursor()
-
-sql = "select * from info"
-curs.execute(sql)
-
-rows = curs.fetchall()
-print(rows)
-
-conn.close()
+    <body>
+        
+    </body>
+<html>  
