@@ -12,7 +12,6 @@
   while($row = mysqli_fetch_row($result)){
      $pass = $row[0];
   }
-  echo $pass;
   mysqli_close($connect);
 
 ?>
