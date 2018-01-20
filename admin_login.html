@@ -1,0 +1,46 @@
+<html>
+    <head> 
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title> 페이지 관리 </title>
+    </head>
+    <body>
+        <h1>관리자 페이지로 접속합니다</h1>
+        <p>비밀번호를 입력해주세요</p>
+        
+        <input type="text" id="input" onkeypress="if(event.keyCode==13) {scan();}"> <br>
+        
+        <button onclick="scan()"> 입력받기</button>
+        
+    </body>
+
+        
+</html>
+
+
+<?php
+
+  $db_host = "localhost";
+  $db_user = "root";
+  $db_pw = "111111";
+  $db_name = "tutorials";
+  $connect = mysqli_connect($db_host,$db_user,$db_pw,$db_name);
+
+  $result = mysqli_query($connect,"select password from admin");
+  $row = mysqli_fetch_row($result);
+  
+
+  mysqli_close($connect);
+
+?>
+
+<script type="text/javascript">
+    
+var password = '<?= $row[0] ?>';
+function scan(){
+var input = document.getElementById("input").value;
+    if(input == password){
+        location.href="admin.html"
+    }
+}
+</script>
