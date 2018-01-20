@@ -1,6 +1,5 @@
 
 <?php
-  include './admin_login_page.html';
 
   $db_host = "localhost";
   $db_user = "root";
@@ -13,8 +12,7 @@
   while($row = mysqli_fetch_row($result)){
      $pass = $row[0];
   }
-  
-
+  echo $pass;
   mysqli_close($connect);
 
 ?>
