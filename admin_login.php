@@ -1,27 +1,20 @@
 
 <?php
+  include './admin_login_page.html';
 
   $db_host = "localhost";
   $db_user = "root";
   $db_pw = "111111";
   $db_name = "tutorials";
   $connect = mysqli_connect($db_host,$db_user,$db_pw,$db_name);
+    
 
   $result = mysqli_query($connect,"select password from admin");
-  $row = mysqli_fetch_row($result);
+  while($row = mysqli_fetch_row($result)){
+     $pass = $row[0];
+  }
   
 
   mysqli_close($connect);
 
 ?>
-
-<script type="text/javascript">
-    
-var password = '<?= $row[0] ?>';
-function scan(){
-var input = document.getElementById("input").value;
-    if(input == password){
-        location.href="admin.html"
-    }
-}
-</script>
