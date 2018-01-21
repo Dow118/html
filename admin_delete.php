@@ -9,9 +9,8 @@
                         $data_num = 20;
 
                         
-                        $query = "select * from info limit 0,10";
 
-                        $result = mysqli_query($connect, $query);
+                        $result = mysqli_query($connect, "select * from info limit 0,10");
                           while($row=mysqli_fetch_row($result)){
                           echo "<form method='post' action='admin_delete_action.php'>;
 
