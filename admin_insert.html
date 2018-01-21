@@ -8,10 +8,20 @@
     <form method="post" action="dbconnection.php">
     <br><br>
     <CENTER>DB로 전송할 값 입력받기</b></div><br>
-      <label>이    름 : </label><input type="text" name="song_name" class="box"/></br>
+    
+      <label>곡    명 : </label><input type="text" name="song_name" class="box"/></br>
       <label>아 티 스 트 : </label><input type="text" name="song_artist" class="box"/><br>
-      <label>주    소 : </label><input type="text" name="song_url" class="box"/>
-
+      <label>U R L : </label><input type="text" name="song_url" class="box"/>
+      <label>카 테 고 리 : </label><select name="song_category" />
+                        <option value='' selected>-- 선택 --</option>
+                        <?
+                          $cnt = 3;
+                          while($cnt>1){
+                          echo ("<option value='number'>".$cnt$."</option>");
+                          }
+                        ?>
+                        </select>
+  
     <center>
     <input type="submit" value="DB로 전송"/><br />
     </form>
