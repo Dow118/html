@@ -10,7 +10,7 @@ switch($menu){
     echo("<script>location.replace('./admin_modify.html');</script>");
     break;
     case 'delete':
-    echo("<script>location.replace('./admin_delete.html');</script>");
+    echo("<script>location.replace('./admin_delete.php');</script>");
     break;
 }
 
