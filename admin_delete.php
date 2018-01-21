@@ -1,6 +1,7 @@
     <?php
 
-    include './admin_delete_page.html';
+    include './admin_delete_page_head.html';
+
     $page = $_GET['page'];
 
     if($page>-1){
@@ -23,5 +24,6 @@
     else
       echo "no page<br>";
 
+    include './admin_delete_page_foot.html';
     ?>
 
