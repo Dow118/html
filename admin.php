@@ -1,7 +1,5 @@
 <?php
 
-include './admin_menu.html';
-
 $name = $_GET['name'];
 
 switch($name){
