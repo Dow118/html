@@ -3,6 +3,22 @@
     <title> delete</title>
   </head>
   <body>
+    <?
+     include './admin_delete_connect.php';
+    ?>
+    <br>
+    <br>
+    <br>
+    <a href="admin_delete.html?page=0"> 1 </a>
+    <a href="admin_delete.html?page=1"> 2 </a>
+    <a href="admin_delete.html?page=2"> 3 </a>
+    <a href="admin_delete.html?page=3"> 4 </a>
+    <a href="admin_delete.html?page=4"> 5 </a>
+  </body>
+
+</html>
+
+
 
                         <?php
                         $db_host = "localhost";
@@ -24,11 +40,3 @@
                         ?> 
                 </form>
     <br><br>
-    <a href="admin_delete.html?page=0"> 1 </a>
-    <a href="admin_delete.html?page=1"> 2 </a>
-    <a href="admin_delete.html?page=2"> 3 </a>
-    <a href="admin_delete.html?page=3"> 4 </a>
-    <a href="admin_delete.html?page=4"> 5 </a>
-  </body>
-
-</html>
