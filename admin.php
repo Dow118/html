@@ -3,13 +3,13 @@
 $name = $_GET['name'];
 
 switch($name){
-    case "insert":
+    case 'insert':
     echo("<script>location.replace('./admin_insert.html');</script>");
     break;
-    case "modify":
+    case 'modify':
     echo("<script>location.replace('./admin_modify.html');</script>");
     break;
-    case "delete":
+    case 'delete':
     echo("<script>location.replace('./admin_delete.html');</script>");
     break;
 }
