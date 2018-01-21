@@ -13,8 +13,13 @@
         
                         $page_num = $page*10;
                         $data_num = 20;
-    echo "<form method='POST' action = 'admin_delete_action.php'>";
+         echo $page;
+                            echo $page_num;
+                          echo "<form method='POST' action = 'admin_delete_action.php'>";
                         $result = mysqli_query($connect,"select * from info limit $start_num,$page_num");
+                          echo $page;
+                            echo $page_num;
+        
                           while($row=mysqli_fetch_row($result)){
                           echo "<input type='hidden' name='key' value='$row[0]'/>";
                           echo "$row[0] | $row[1] | $row[2] | $row[3] | $row[4] | $row[5] ";
