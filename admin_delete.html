@@ -14,7 +14,7 @@
                         $data_num = 20;
                         ?>
                 <form method="POST" action = "admin_delete_action.php">
-                        <?
+                        <?php
                         $result = mysqli_query($connect,"select * from info limit $start_num,$data_num");
                           while($row=mysqli_fetch_row($result)){
                           echo "<input type='hidden' name='key' value='$row[0]'/>";
