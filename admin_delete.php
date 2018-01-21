@@ -8,7 +8,7 @@
                         $start_num = 0;
                         $data_num = 20;
 
-                        $query = "select * from info limit"+$start_num+","+$data_num;
+                        $query = "select * from info limit".$start_num.",".$data_num;
 
                         $result = mysqli_query($connect,$query);
                           while($row=mysqli_fetch_row($result)){
