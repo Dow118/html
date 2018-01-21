@@ -2,16 +2,16 @@
 
 include './admin_menu.html';
 
-$menu = $_GET['menu'];
+$name = $_GET['name'];
 
-switch($menu){
-    case 1:
+switch($name){
+    case "insert":
     echo("<script>location.replace('./admin_insert.html');</script>");
     break;
-    case 2:
+    case "modify":
     echo("<script>location.replace('./admin_modify.html');</script>");
     break;
-    case 3:
+    case "delete":
     echo("<script>location.replace('./admin_delete.html');</script>");
     break;
 }
