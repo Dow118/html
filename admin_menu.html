@@ -6,9 +6,16 @@
   </head>
   <body>
     <form action="admin.php" method="post">
-    <input type="submit" name="insert" value="DB insert"/><br />
-    <input type="submit" name="modify" value="DB modify"/><br />
-    <input type="submit" name="delete" value="DB delete"/><br />
+    <input type="hidden" name="menu" value="insert"/>
+    <input type="submit" value="DB insert"/><br />
+    </form>
+    <form action="admin.php" method="post">
+    <input type="hidden" name="menu" value="modify"/>
+    <input type="submit" value="DB modify"/><br />
+    </form>
+    <form action="admin.php" method="post">
+    <input type="hidden" name="menu" value="delete"/>
+    <input type="submit" value="DB delete"/><br />
     </form>
   </body>
 
