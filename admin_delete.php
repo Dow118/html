@@ -8,12 +8,13 @@
                         $start_num = 0;
                         $data_num = 20;
 
-                        $query = "select * from info limit ".$start_num.",".$data_num;
+                        //$query = "select * from info limit ".$start_num.",".$data_num;
+                        $query = "select * from info limit 0,10";
 
-                        $result = mysqli_query($connect,$query);
+                        $result = mysqli_query($connect, $query);
                           while($row=mysqli_fetch_row($result)){
                           echo "<form method='post' action='admin_delete_action.php'>;
-                          
+                          echo "<input type='hidden' name='key' value='$row[0]'/>";
                           echo "$row[0] | $row[1] | $row[2] | $row[3] | $row[4] | $row[5] ";
                           echo "<input type='submit' value='delete'/>";
                           echo "</form><br/>";
