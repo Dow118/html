@@ -4,11 +4,7 @@
                         $db_user = "root";
                         $db_pw = "111111";
                         $db_name = "tutorials";
-                        $connect = mysqli_connect($db_host,$db_user,$db_pw,$db_name);
-                        $start_num = 0;
-                        $data_num = 20;
-
-                        
+                        $connect = mysqli_connect($db_host,$db_user,$db_pw,$db_name);                       
 
                         $result = mysqli_query($connect, "select * from info limit 0,10");
                           while($row=mysqli_fetch_row($result)){
