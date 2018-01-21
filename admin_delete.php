@@ -1,4 +1,4 @@
-    <?
+    <?php
 
     include './admin_delete_page.html';
     $page = $_GET['page'];
