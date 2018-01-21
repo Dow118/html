@@ -1,8 +1,8 @@
 <?php
 
-$name = $_GET['name'];
+$menu = $_GET['menu'];
 
-switch($name){
+switch($menu){
     case 'insert':
     echo("<script>location.replace('./admin_insert.html');</script>");
     break;
