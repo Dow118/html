@@ -1,6 +1,6 @@
 <?php
 
-$menu = $_GET['menu'];
+$menu = $_POST['menu'];
 
 switch($menu){
     case 'insert':
