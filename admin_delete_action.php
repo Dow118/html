@@ -17,7 +17,7 @@ else{
   mysqli_query("alter table info auto_increment=1");
   mysqli_query("set @cnt=0");
   mysqli_query("update info set info.song_no=@cnt:=@cnt+1");
-  echo("<script>location.replace('./admin_delete.html');</script>");
+  echo("<script>location.replace('./admin_delete.php');</script>");
   }
 
 
