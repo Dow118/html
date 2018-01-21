@@ -15,10 +15,14 @@
       <label>카 테 고 리 : </label><select name="song_category" />
                         <option value='' selected>-- 선택 --</option>
                         <?php
-                          $cnt = 0;
-                          while($cnt<=1){
-                          echo "<option value='number'> $cnt </option>";
-                          $cnt = $cnt + 1;
+                        $db_host = "localhost";
+                        $db_user = "root";
+                        $db_pw = "111111";
+                        $db_name = "tutorials";
+                        $connect = mysqli_connect($db_host,$db_user,$db_pw,$db_name);
+                        $result = mysqli_query($connect,"select distinct song_category from info");
+                          while($row=mysqli_fetch_row($result)){
+                          echo "<option value='number'> $row[0] </option>";
                           }
                         ?>
                         </select>
