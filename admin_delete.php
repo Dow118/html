@@ -11,7 +11,7 @@
                         $db_name = "tutorials";
                         $connect = mysqli_connect($db_host,$db_user,$db_pw,$db_name);
         
-                        $page_num = $page*10;
+                        $page_num = $page*20;
                         $data_num = 20;
                           echo "<form method='POST' action = 'admin_delete_action.php'>";
                         $result = mysqli_query($connect,"select * from info limit $page_num,$data_num");
