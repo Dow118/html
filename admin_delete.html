@@ -1,3 +1,9 @@
+<html>                        
+  <head>
+    <title> delete</title>
+  </head>
+  <body>
+
                         <?php
                         $db_host = "localhost";
                         $db_user = "root";
@@ -6,8 +12,9 @@
                         $connect = mysqli_connect($db_host,$db_user,$db_pw,$db_name);
                         $start_num = 0;
                         $data_num = 20;
-
-
+                        ?>
+                <form method="POST" action = "admin_delete_action.php">
+                        <?
                         $result = mysqli_query($connect,"select * from info limit $start_num,$data_num");
                           while($row=mysqli_fetch_row($result)){
                           echo "<input type='hidden' name='key' value='$row[0]'/>";
@@ -15,3 +22,7 @@
                           echo "<input type='submit' value='delete'/><br/>";
                           }
                         ?> 
+                </form>
+  </body>
+
+</html>
