@@ -11,9 +11,9 @@ if(!$connect)
 $result = mysqli_query($connect,"insert into info(song_no, song_name,song_artist,song_url, song_category, song_date)
  value(default, '$_POST[song_name]','$_POST[song_artist]','$_POST[song_url]', '$_POST[song_category]', default)");
 
-  mysqli_query("alter table info auto_increment=1");
-  mysqli_query("set @cnt=0");
-  mysqli_query("update info set info.song_no=@cnt:=@cnt+1");
+  mysqli_query("alter table info auto_increment=1;");
+  mysqli_query("set @cnt=0;");
+  mysqli_query("update info set info.song_no=@cnt:=@cnt+1;");
 
 if($result)
   echo("<script>location.replace('./admin_insert.html');</script>"); 
