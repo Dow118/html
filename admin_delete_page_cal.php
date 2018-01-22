@@ -15,9 +15,14 @@ $result = mysqli_query($connect,"select song_no from info;");
 $total = mysqli_num_rows($result);
 
 while($total>-1){
-  $number = $total / 20 + 1;
-  echo "<a href='admin_delete.php?page='$number' class='page'> $number </a>";
+  $i = 0;
+  $number[$i] = intval($total/20) + 1;
   $total = $total - 20;
+  $i = $i + 1;
 }
+for($j = $i; $j>0; $j--){
+  echo "<a href='admin_delete.php?page='$number[$j]' class='page'> $j </a>";
+}
+
 
 ?>
