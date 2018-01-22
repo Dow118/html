@@ -1,5 +1,7 @@
 <?php
 
+ include './admin_modify_head.html';
+
 $db_host = "localhost";
 $db_user = "root";
 $db_pw = "111111";
@@ -23,5 +25,7 @@ if(!$connect)
                           }
  }
  echo "<br><input type='submit' value='수정하기'/><br>";
+
+ include './admin_modify_foot.html';
 
 ?>
