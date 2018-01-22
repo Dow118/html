@@ -13,7 +13,12 @@
         
                         $page_num = $page*20;
                         $data_num = 20;
+                        
                           
+                         mysqli_query($connect, "set session character_set_connection=utf8;");
+                         mysqli_query($connect, "set session character_set_results=utf8;");
+                         mysqli_query($connect, "set session character_set_client=utf8;");
+        
                         $result = mysqli_query($connect,"select * from info limit $page_num,$data_num");
         
                           while($row=mysqli_fetch_row($result)){
