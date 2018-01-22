@@ -8,6 +8,11 @@ $connect = mysqli_connect($db_host,$db_user,$db_pw,$db_name);
 if(!$connect)
   echo "ERROR! : failed to CONNECT server";
 
+mysqli_query($connect, "set session character_set_connection=utf8;");
+mysqli_query($connect, "set session character_set_results=utf8;");
+mysqli_query($connect, "set session character_set_client=utf8;");
+
+
 $result = mysqli_query($connect,"insert into info(song_no, song_name,song_artist,song_url, song_category, song_date)
  value(default, '$_POST[song_name]','$_POST[song_artist]','$_POST[song_url]', '$_POST[song_category]', default)");
 
