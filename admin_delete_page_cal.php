@@ -13,20 +13,16 @@ if(!$connect)
 $result = mysqli_query($connect,"select song_no from info;");
 
 $total = mysqli_num_rows($result);
+$i=0;
 
 while($total>-1){
-  $i = 0;
   $number[$i] = intval($total/20) + 1;
   $total = $total - 20;
   $i = $i + 1;
 }
 
-echo $number[0];
-echo $number[1];
-echo count($number);
-
-for($j = $i; $j>-1; $j--){
-  echo "<a href='admin_delete.php?page='$number[$j]' class='page'> $j </a>";
+for($j = count($number)-1; $j>-1; $j--){
+  echo "<a href='admin_delete.php?page='$number[$j]' class='page'> $number[$j] </a>";
 }
 
 
