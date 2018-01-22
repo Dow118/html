@@ -8,7 +8,11 @@ $connect = mysqli_connect($db_host,$db_user,$db_pw,$db_name);
 
 if(!$connect)
   echo "ERROR! : failed to CONNECT server";
-  
+
+ mysqli_query($connect, "set session character_set_connection=utf8;");
+ mysqli_query($connect, "set session character_set_results=utf8;");
+ mysqli_query($connect, "set session character_set_client=utf8;");
+
 $result = mysqli_query($connect,"update info set song_artist='$_POST[song_artist]', song_name='$_POST[song_name]', song_url='$_POST[song_url]', song_category='$_POST[song_category]' where song_no='$_POST[song_no]'");
  
   mysqli_query($connect,"alter table info auto_increment=1;");
