@@ -18,7 +18,7 @@ if(!$connect)
                           echo "<label>아 티 스 트 : </label><input type='text' name='song_name' value='$row[2]'/><br>";
                           echo "<label>U R L : </label><input type='text' name='song_url' value='$row[3]'/><br>";
                           echo "<label>카 테 고 리 : </label><select name='song_category' />";
-                          echo "<option value='' selected>--재 선택 --</option>"
+                          echo "<option value='' selected>--재 선택 --</option>";
                              $result = mysqli_query($connect,"select distinct song_category from info");
                           while($row=mysqli_fetch_row($result)){
                           echo "<option value='$row[0]'> $row[0] </option>";
