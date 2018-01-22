@@ -22,7 +22,7 @@ while($total>-1){
 }
 
 for($j = count($number)-1; $j>-1; $j--){
-  echo "<a href='admin_delete.php?page='$number[$j]' class='page'> $number[$j] </a>";
+  echo "<a href='admin_delete.php?page=$number[$j] class='page'> $number[$j] </a>";
 }
 
 
