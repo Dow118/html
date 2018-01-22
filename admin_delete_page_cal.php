@@ -20,7 +20,7 @@ while($total>-1){
   $total = $total - 20;
   $i = $i + 1;
 }
-for($j = $i; $j>0; $j--){
+for($j = $i; $j>-1; $j--){
   echo "<a href='admin_delete.php?page='$number[$j]' class='page'> $j </a>";
 }
 
