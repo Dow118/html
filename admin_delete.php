@@ -25,7 +25,7 @@
                           echo "<form method='POST' action = 'admin_modify_action.php'>";
                           echo "<input type='hidden' name='key' value='$row[0]'>";
                           echo "<input type='submit' value='modify' id='submitbutton'/>";
-                          echo "</form>";
+                          echo "</form><br>";
                           }
     }
     else
