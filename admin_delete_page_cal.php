@@ -14,6 +14,7 @@ $result = mysqli_query($connect,"select song_no from info;");
 
 $total = mysqli_num_rows($result);
 
-echo $total;
+echo $page_num;
+echo $data_num;
 
 ?>
