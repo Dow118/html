@@ -21,7 +21,9 @@ while($total>-1){
   $i = $i + 1;
 }
 
-echo $number;
+echo $number[0];
+echo $number[1];
+echo count($number);
 
 for($j = $i; $j>-1; $j--){
   echo "<a href='admin_delete.php?page='$number[$j]' class='page'> $j </a>";
