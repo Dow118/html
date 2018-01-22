@@ -21,7 +21,7 @@
                           echo "<input type='hidden' name='key' value='$row[0]'/>";
                           echo "$row[0] | $row[1] | $row[2] | $row[3] | $row[4] | $row[5] ";
                           echo "<input type='submit' value='delete' id='submitbutton'>";
-
+                          echo "</form>";
                           echo "<form method='POST' action = 'admin_modify_action.php'>";
                           echo "<input type='hidden' name='key' value='$row[0]'>";
                           echo "<input type='submit' value='modify' id='submitbutton'/>";
