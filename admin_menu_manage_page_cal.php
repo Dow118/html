@@ -15,7 +15,7 @@ while($total>-1){
 
 for($j = count($number)-1; $j>-1; $j--){
   $pagenumber = $number[$j] - 1;
-  echo "<a href='admin_menu_manage_page.php?page=$pagenumber class='page'> $number[$j] </a>";
+  echo "<a href='admin_menu_manage.html?page=$pagenumber class='page'> $number[$j] </a>";
 }
 
 
