@@ -1,6 +1,6 @@
 <?php
 
-include './dbconncec.php';
+include './dbconnect.php';
 
 $result = mysqli_query($connect,"select song_no from info;");
 
