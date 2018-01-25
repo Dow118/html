@@ -7,9 +7,4 @@
   $db_name = "tutorials";
   $connect = mysqli_connect($db_host,$db_user,$db_pw,$db_name);
     
-  while($row = mysqli_fetch_row($result)){
-     $pass = $row[0];
-  }
-  mysqli_close($connect);
-
 ?>
