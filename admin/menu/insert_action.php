@@ -13,7 +13,7 @@ mysqli_query($connect,"set @cnt=0;");
 mysqli_query($connect,"update info set info.song_no=@cnt:=@cnt+1;");
 
 if($result)
-  echo("<script>location.replace('./admin_menu_insert.html');</script>"); 
+  echo("<script>location.replace('./admin/menu/insert.html');</script>"); 
 else
   echo "ERROR! : failed to SEND data";
 echo "<br>";
