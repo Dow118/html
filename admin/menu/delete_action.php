@@ -1,6 +1,6 @@
 <?php
 
-include '/dbconnect.php';
+include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 
 $result = mysqli_query($connect,"delete from info where song_no=$_POST[key]");
 
