@@ -1,6 +1,6 @@
 <?php
 
-include './dbconnect.php';
+include './html/dbconnect.php';
 
 $result = mysqli_query($connect,"select song_no from info;");
 
@@ -15,7 +15,7 @@ while($total>-1){
 
 for($j = count($number)-1; $j>-1; $j--){
   $pagenumber = $number[$j] - 1;
-  echo "<a href='admin_menu_manage.html?page=$pagenumber' class='page'> $number[$j] </a>";
+  echo "<a href='./manage.html?page=$pagenumber' class='page'> $number[$j] </a>";
 }
 
 
