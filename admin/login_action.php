@@ -16,7 +16,7 @@ if($_POST["isPassword"]==$pass){
     echo("<script>location.replace('./menu.html');</script>"); 
   }
   else{
-    echo("<script>alert('no');</script>");
+    echo("<script>alert('');</script>");
     echo("<script>location.replace('/index.html');</script>"); 
   }
 ?>
