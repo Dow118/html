@@ -1,6 +1,6 @@
 <?php
 
-include './dbconnect.php';
+include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 
 // set Query to DB - get password
 $result = mysqli_query($connect,"select password from admin");
@@ -12,9 +12,11 @@ while($row = mysqli_fetch_row($result)){
 
 // configuration password
 if($_POST["isPassword"]==$pass){
+    echo("<script>alert("pass");</script>");
     echo("<script>location.replace('./menu.html');</script>"); 
   }
   else{
+    echo("<script>alert("no");</script>");
     echo("<script>location.replace('/index.html');</script>"); 
   }
 ?>
