@@ -12,9 +12,9 @@ while($row = mysqli_fetch_row($result)){
 
 // configuration password
 if($_POST["isPassword"]==$pass){
-    echo("<script>location.replace('./admin_menu.html');</script>"); 
+    echo("<script>location.replace('./menu.html');</script>"); 
   }
   else{
-    echo("<script>location.replace('./index.html');</script>"); 
+    echo("<script>location.replace('./html/index.html');</script>"); 
   }
 ?>
