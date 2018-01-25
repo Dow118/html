@@ -1,21 +1,14 @@
 <?php
 
- include './admin_modify_head.html';
-
-$db_host = "localhost";
-$db_user = "root";
-$db_pw = "111111";
-$db_name = "tutorials";
-$connect = mysqli_connect($db_host,$db_user,$db_pw,$db_name);
-if(!$connect)
-  echo "ERROR! : failed to CONNECT server";
+include './dbconnect.php';
 
  mysqli_query($connect, "set session character_set_connection=utf8;");
  mysqli_query($connect, "set session character_set_results=utf8;");
  mysqli_query($connect, "set session character_set_client=utf8;");
 
  $result = mysqli_query($connect,"select * from info where song_no=$_POST[key]");
- echo "<form method='post' action='admin_modify.php'>";
+
+ echo "<form method='post' action='admin_menu_modify_action.php'>";
  while($row=mysqli_fetch_row($result)){
                           echo "<input type='hidden' name='song_no' value='$row[0]'>";
                           echo "<label>곡    명 : </label><input type='text' name='song_artist' value='$row[1]'/><br>";
@@ -30,7 +23,5 @@ if(!$connect)
  }
  echo "</form>";
  echo "<br><input type='submit' value='수정하기'/><br>";
-
- include './admin_modify_foot.html';
 
 ?>
