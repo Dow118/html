@@ -10,6 +10,7 @@ else{
   mysqli_query($connect,"alter table info auto_increment=1;");
   mysqli_query($connect,"set @cnt=0;");
   mysqli_query($connect,"update info set info.song_no=@cnt:=@cnt+1;");
+  echo("<script>alert('삭제 완료!');</script>");
   echo("<script>location.replace('./manage.html');</script>");
   }
 
