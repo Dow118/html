@@ -1,6 +1,6 @@
 <?php
 
-include './dbconnect.php';
+include './html/dbconnect.php';
 
  mysqli_query($connect, "set session character_set_connection=utf8;");
  mysqli_query($connect, "set session character_set_results=utf8;");
@@ -8,7 +8,7 @@ include './dbconnect.php';
 
  $result = mysqli_query($connect,"select * from info where song_no=$_POST[key]");
 
- echo "<form method='post' action='admin_menu_modify_action.php'>";
+ echo "<form method='post' action='./modify_action.php'>";
  while($row=mysqli_fetch_row($result)){
                           echo "<input type='hidden' name='song_no' value='$row[0]'>";
                           echo "<label>곡    명 : </label><input type='text' name='song_artist' value='$row[1]'/><br>";
