@@ -13,11 +13,12 @@ $result = mysqli_query($connect,"update info set song_artist='$_POST[song_artist
   mysqli_query($connect,"update info set info.song_no=@cnt:=@cnt+1;");
   
 if($result)
-  echo("<script>location.replace('./admin_delete.php?menu=0');</script>"); 
+  echo("<script>location.replace('./admin_menu_manage.html?menu=0');</script>"); 
 else
   echo "ERROR! : failed to SEND data";
   
 echo "<br>";
+
 mysqli_close($connect);
 
 ?>
