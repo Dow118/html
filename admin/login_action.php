@@ -1,6 +1,6 @@
 <?php
 
-include '/dbconnect.php';
+include './dbconnect.php';
 
 // set Query to DB - get password
 $result = mysqli_query($connect,"select password from admin");
