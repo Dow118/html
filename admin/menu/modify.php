@@ -1,6 +1,6 @@
 <?php
 
-include './html/dbconnect.php';
+include '/dbconnect.php';
 
  mysqli_query($connect, "set session character_set_connection=utf8;");
  mysqli_query($connect, "set session character_set_results=utf8;");
