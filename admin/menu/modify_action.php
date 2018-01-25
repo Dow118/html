@@ -1,6 +1,6 @@
 <?php
 
-include './dbconnect.php';
+include '/dbconnect.php';
 
  mysqli_query($connect, "set session character_set_connection=utf8;");
  mysqli_query($connect, "set session character_set_results=utf8;");
@@ -13,7 +13,7 @@ $result = mysqli_query($connect,"update info set song_artist='$_POST[song_artist
   mysqli_query($connect,"update info set info.song_no=@cnt:=@cnt+1;");
   
 if($result)
-  echo("<script>location.replace('./admin_menu_manage.html?menu=0');</script>"); 
+  echo("<script>location.replace('./manage.html?menu=0');</script>"); 
 else
   echo "ERROR! : failed to SEND data";
   
