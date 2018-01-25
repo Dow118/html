@@ -1,5 +1,5 @@
 <?php
-include '/dbconnect.php';
+include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 
 mysqli_query($connect, "set session character_set_connection=utf8;");
 mysqli_query($connect, "set session character_set_results=utf8;");
