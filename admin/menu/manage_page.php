@@ -3,7 +3,7 @@
     $page = $_GET['page'];
 
     if($page>-1){
-                        include '/dbconnect.php';
+                        include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
         
                         $page_num = $page*20;
                         $data_num = 20;
