@@ -57,7 +57,7 @@
 
                     $.ajax({
                         type:'GET',
-                        url:'get_song_info.php',
+                        url:'song/get_song_info.php',
                         dataType : "json",
                         data : {song_name : song_name},
                         success:function(data){
@@ -93,66 +93,9 @@
                 </form>
             </div>
             <div id="category">
-            <ul>
-                <li class="menu">
-                    <a>Classic</a>
-                    <ul class="hide">
-                        <li class="menu">
-                            <a>쇼팽</a>
-                            <ul class="hide">
-                                <li class="song"><a>Nocturne Op.9 No.2 E-Flat Major</a></li>
-                                <li class="song"><a>Spring Waltz</a></li>
-                                <li class="song"><a>Etude Op.10 No.12(Revolutionary)</a></li>
-                                <li class="song"><a>Fantaisie-Impromptu(Op.66)</a></li>
-                                <li class="song"><a>Etude Op.25 No. 11 (Winter Wind)</a></li>
-                                <li class="song"><a>Etude Op.10 No. 5 (Black Keys)</a></li>
-                                <li class="song"><a>Minute Waltz</a></li>
-                                <li class="song"><a>Polonaise (Op.53)</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu">
-                            <a>베토벤</a>
-                            <ul class="hide">
-                                <li class="song"><a>Fur Elise</a></li>
-                                <li class="song"><a>Moonlight Sonata Op.27 No.2 1st</a></li>
-                                <li class="song"><a>Moonlight Sonata Op.27 No.2 3rd</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu">
-                            <a>모차르트</a>
-                            <ul class="hide">
-                                <li class="song"><a>Lacrimosa</a></li>
-                                <li class="song"><a>Sonata No.16 in C Major 1st</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu">
-                    <a>NewAge</a>
-                    <ul class="hide">
-                        <li>Stevebarakatt</li>
-                        <li>hisaishi joe</li>
-                    </ul>
-                </li>
-                <li class="menu">
-                    <a>OST</a>
-                    <ul class="hide">
-                        <li>Drama</li>
-                        <li>Movie</li>
-                        <li>Animation</li>
-                        <li>Game</li>
-                    </ul>
-                </li>
-                <li class="menu">
-                    <a>K-POP</a>
-                    <ul class="hide">
-                        <li>아이유</li>
-                        <li>태연</li>
-                        <li>윤하</li>
-                        <li>성시경</li>
-                    </ul>
-                </li>
-            </ul>
+                <?php
+                    include 'song/get_song_category.php';
+                ?>
             </div>
         </div>
         <div class="video">
