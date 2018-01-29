@@ -6,12 +6,28 @@
     form{
       display:inline;
     }
+    .body_menu{
+    width: 1500px;
+    height: 1000px;
+    }
+    
+    .button{
+    width: 50px;  
+    height: 50px;
+    }
+      
+    #button_back{
+      color: #000007;
+      height: 50px;
+      width: 50px;
+    }
+      
   </style>
+  <title>DB 수정</title>
+  <button type="button" onclick="location.href='/index.html'"  class="button" id="button_back"> 메인 </button>
+  <button type="button" onclick="location.href='/admin/menu.html'" class="button" id="button_back"> 관리 </button>
 </head>
 <body>
-  <a href="/admin/menu.html"> go to admin(main) page</a><br>
-  <a href="/index.html"> go to home(main) page</a><br>
-  
   <?php
   
   include './modify.php';
