@@ -11,7 +11,7 @@ else{
   mysqli_query($connect,"set @cnt=0;");
   mysqli_query($connect,"update info set info.song_no=@cnt:=@cnt+1;");
   echo("<script>alert('삭제 완료!');</script>");
-  echo("<script>location.replace('./manage.html');</script>");
+  echo("<script>location.replace('./manage.html?page=1');</script>");
   }
 
 
