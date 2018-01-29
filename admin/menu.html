@@ -3,6 +3,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <style>
+    
+    form{
+      display:inline;
+    }
       
     .body_menu{
     width: 1500px;
@@ -37,12 +41,12 @@
   <body>
     <div class="body_menu">
     <form action="./menu_action.php" method="post">
-    <input type="hidden" name="menu" value="insert"/>
-    <input type="submit" value="삽입" class="button" id="button_insert"/>
+    <input type="hidden" name="menu" value="insert">
+    <input type="submit" value="삽입" class="button" id="button_insert">
     </form>
     <form action="./menu_action.php" method="post">
-    <input type="hidden" name="menu" value="modify"/>
-    <input type="submit" value="DB modify & delete" class="button" id="button_modify"/>
+    <input type="hidden" name="menu" value="modify">
+    <input type="submit" value="DB modify & delete" class="button" id="button_modify">
     </div>
   </body>
 
