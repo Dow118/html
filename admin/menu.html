@@ -2,16 +2,48 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <style>
+      
+    .body_menu{
+    width: 1500px;
+    height: 1000px;
+    }
+    
+    .button{
+    width: 50px;  
+    height: 50px;
+    }
+      
+    #button_back{
+      color: #F9F9FB;
+      height: 50px;
+      width: 50px;
+    }
+    #button_insert{
+      color: #1B18E6;
+      height: 50px;
+      width: 50px;
+    }
+    #button_modify{
+      color: #0BEA4A;
+      height: 50px;
+      width: 50px;
+    }  
+    </style>
     <title>DB Setting</title>
+    <button type="button" onclick="location.href='/index.html'"  class="button" id="button_back"> 메인 </button>
+    <button type="button" onclick="location.href='/admin/menu.html'" class="button" id="button_back"> 관리 </button>
   </head>
   <body>
+    <div class="body_menu">
     <form action="./menu_action.php" method="post">
     <input type="hidden" name="menu" value="insert"/>
-    <input type="submit" value="DB insert"/><br />
+    <input type="submit" value="DB insert" class="button" id="button_insert"/><br />
     </form>
     <form action="./menu_action.php" method="post">
     <input type="hidden" name="menu" value="modify"/>
-    <input type="submit" value="DB modify & delete"/><br />
+    <input type="submit" value="DB modify & delete" class="button" id="button_modify"/><br />
+    </div>
   </body>
 
 </html>
