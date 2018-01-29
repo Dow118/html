@@ -4,13 +4,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     
     <style>
-        form{
+    form{
       display:inline;
     }
       
     .body_menu{
     width: 500px;
     height: 500px;
+    text-align: center;
     }
     
     .button{
@@ -32,23 +33,15 @@
   <body>
     <div class="body_menu">
     <form method="post" action="./insert_action.php">
-    <CENTER>DB로 전송할 값 입력받기</b><br>
+    <CENTER>아래 양식을 통해 작성해주세요</b><br>
     
-      <label>곡    명 : </label><input type="text" name="song_name" class="box"><br>
-      <label>아 티 스 트 : </label><input type="text" name="song_artist" class="box"><br>
-      <label>U R L : </label><input type="text" name="song_url" class="box"><br>
-      <label>카 테 고 리 : </label><select name="song_category">
+      <label size="10px">곡    명 : </label><input type="text" name="song_name" class="box"><br>
+      <label size="10px">아 티 스 트 : </label><input type="text" name="song_artist" class="box"><br>
+      <label size="10px">U R L : </label><input type="text" name="song_url" class="box"><br>
+      <label size="10px">카 테 고 리 : </label><select name="song_category">
                         <option value='' selected>-- 선택 --</option>
                         <?php
-                        $db_host = "localhost";
-                        $db_user = "root";
-                        $db_pw = "111111";
-                        $db_name = "tutorials";
-                        $connect = mysqli_connect($db_host,$db_user,$db_pw,$db_name);
-
-                         mysqli_query($connect, "set session character_set_connection=utf8;");
-                         mysqli_query($connect, "set session character_set_results=utf8;");
-                         mysqli_query($connect, "set session character_set_client=utf8;");
+                        include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 
                         $result = mysqli_query($connect,"select distinct song_category from info");
                           while($row=mysqli_fetch_row($result)){
