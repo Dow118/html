@@ -9,7 +9,7 @@
                         $data_num = 20;
         
                         echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'>
-                                <span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';>번  호▼</span><div style='display: none'><HR> <a>오름차순</a><input type='radio'>내림차순<HR></div></th><th>아티스트</th><th class='large'>곡  명</th><th>주소값</th><th class='small'>장 르</th><th>등록일자</th></tr>";
+                                <span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';>번  호▼</span><div style='display: none'><HR> <a style='CURSOR: hand' onclick=\"location.href='./manage.html?page=$page&sortByNum=$_GET['sortByNum']'\">오름차순</a><input type='radio'>내림차순<HR></div></th><th>아티스트</th><th class='large'>곡  명</th><th>주소값</th><th class='small'>장 르</th><th>등록일자</th></tr>";
         
                         if($order_number==0){
                             $result = mysqli_query($connect,"select * from info order by song_no asc limit $page_num,$data_num");
