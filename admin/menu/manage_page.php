@@ -1,15 +1,23 @@
 
     <?php
     $page = $_GET['page'];
+    $order_number = $_GET['sortByNum'];
     if($page>-1){
                         include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
         
                         $page_num = $page*20;
                         $data_num = 20;
         
-                        $result = mysqli_query($connect,"select * from info limit $page_num,$data_num");
                         echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'>
-                                <span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';>번  호▼</span><div style='display: none'><HR> <input type='checkbox'>오름차순<input type='radio'>내림차순<HR></div></th><th>아티스트</th><th class='large'>곡  명</th><th>주소값</th><th class='small'>장 르</th><th>등록일자</th></tr>";
+                                <span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';>번  호▼</span><div style='display: none'><HR> <a>오름차순</a><input type='radio'>내림차순<HR></div></th><th>아티스트</th><th class='large'>곡  명</th><th>주소값</th><th class='small'>장 르</th><th>등록일자</th></tr>";
+        
+                        if($order_number==0){
+                            $result = mysqli_query($connect,"select * from info order by song_no asc limit $page_num,$data_num");
+                        }
+                        else{
+                            $result = mysqli_query($connect,"select * from info order by song_no desc limit $page_num,$data_num");
+                        }
+
                           while($row=mysqli_fetch_row($result)){
                           echo "<form method='POST' action = './delete_action.php'>";
                           echo "<input type='hidden' name='key' value='$row[0]'/>";  
@@ -25,5 +33,6 @@
     }
     else
       echo "select page below <br>";
+
     ?>
 
