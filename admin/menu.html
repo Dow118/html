@@ -41,7 +41,7 @@
   <body>
     <?php
     session_start();
-    if(!isset($_SESSION['admin'])){
+    if(isset($_SESSION['admin'])){
     ?>
     <div class="body_menu">
     <form action="./menu_action.php" method="post">
