@@ -11,10 +11,8 @@
         
                         echo "<table class='type03' style='table-layout:fixed'>
                         <tr>
-                        <th class='small'><span style='CURSOR:pointer' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';>번  호</span></th>
-                        <div style='display: none'>
-                        내용
-                        </div>
+                        <th class='small'><span style='CURSOR:pointer' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?' ':'none';>번  호</span></th>
+                        <div style='display: none'><HR>내용<HR></div>
                         
                         <th>아티스트</th>
                         <th class='large'>곡  명</th>
