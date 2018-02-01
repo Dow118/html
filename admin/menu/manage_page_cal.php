@@ -13,12 +13,19 @@ while($total>-1){
   $i = $i + 1;
 }
 
+if(!$_GET['sortByNum']){
+  $sortByNum = 0;
+}
+else{
+  $sortByNum = $_GET['sortByNum'];
+}
 for($j = count($number)-1; $j>-1; $j--){
   $pagenumber = $number[$j] - 1;
   //echo "<a href='./manage.html?page=$pagenumber' class='page'> $number[$j] </a>";
-  echo "<button type='button' onclick=\"location.href='./manage.html?page=$pagenumber&sortByNum=$_GET['sortByNum']'\" class='page'> $number[$j] </button>";
-
+  echo "<button type='button' onclick=\"location.href='./manage.html?page=$pagenumber&sortByNum=$sortByNum'\" class='page'> $number[$j] </button>";
 }
+
+  
 
 
 
