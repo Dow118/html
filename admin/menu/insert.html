@@ -26,6 +26,10 @@
     </style>
   </head>
   <body>
+    <?php
+    session_start();
+    if(!isset($_SESSION['admin'])){
+    ?>
     <title>DB TEST</title>
     <button type="button" onclick="location.href='/index.html'"  class="button" id="button_back"> 메인 </button>
     <button type="button" onclick="location.href='/admin/menu.html'" class="button" id="button_back"> 관리 </button>
@@ -50,6 +54,13 @@
     <br>
     <input type="submit" value="DB로 전송">
     </form>
+    <?php
+    }
+    else{
+      echo "<b>관리자로 로그인 해주세요</b>";
+      echo "<button type='button' onclick=\"location.href='/admin/index.html'\"  class='button' id='button_back'> 돌아가기 </button>";
+     }
+    ?>
   </body>
 
 </html>
