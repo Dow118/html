@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 
 // set Query to DB - get password
@@ -12,6 +14,7 @@ while($row = mysqli_fetch_row($result)){
 
 // configuration password
 if($_POST["isPassword"]==$pass){
+    $_SESSION['admin'] = "admin";
     echo("<script>location.replace('./menu.html');</script>"); 
   }
   else{
