@@ -8,7 +8,7 @@
                         $page_num = $page*20;
                         $data_num = 20;
         
-                        echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'><span style='CURSOR: hand' value='0' onclick=\"this.value=(this.value=='0')?'1':'0';location.href='./manage.html?page=$page&sortByNum=this.value'\">번  호</span> 
+                        echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'><span style='CURSOR: hand' value='0' onclick=\"this.value=(this.value=='0')?'1':'0';location.href='./manage.html?page=$page&sortByNum='+this.value\">번  호</span> 
                         </th><th>아티스트</th><th class='large'>곡  명</th><th>주소값</th><th class='small'>장 르</th><th>등록일자</th></tr>";
 
                         if($order_number==0){
