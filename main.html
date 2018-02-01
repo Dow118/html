@@ -1,15 +1,8 @@
-<?php
-    session_start();
-    session_destroy();
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0,
-        maximum-scale=1.0, minimum-scale=0, user-scalable=no, target-densitydpi=medium-dpi" />
         <title>작은 오르골에 오신 것을 환영합니다!</title>
         <style>
             #title {
@@ -24,13 +17,19 @@
                 height : 100%;
                 border-right : thick solid #929191;
             }
-            .video {
+            #video {
                 position : absolute;
                 left : 280px;
                 top : 140px;
                 width : 900px;
                 height : 640px;
                 padding : 10px 10px 10px 30px;
+            }
+            #video .wrap{
+                float : left;
+                width : 400px;
+                height : 120px;
+                padding : 10px;
             }
             .recommend {
                 position : absolute;
@@ -43,6 +42,22 @@
             .menu a{cursor:pointer;}
             .menu .hide{display:none;}
             .song a{cursor:pointer;}
+            #video .wrap .image {
+                position : relative;
+                float : left;
+                padding-right : 20px;
+                border-right : thin solid #929191;
+            }
+            #video .wrap .image .img {
+                cursor: pointer;
+            }
+            #video .wrap .text {
+                position : relative;
+                float : left;
+                top : 15px;
+                padding-left : 20px;
+                font-size : 15px;
+            }
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
         <script defer>
@@ -58,7 +73,7 @@
                 });
                 $(".song>a").click(function(){
 
-                    song_name = $(this).text();
+                    var song_name = $(this).text();
 
                     $.ajax({
                         type:'GET',
@@ -67,7 +82,7 @@
                         data : {song_name : song_name},
                         success:function(data){
                             if(data.status=='ok'){
-                                $("div.video").html(
+                                $("div#video").html(
                                     "<h1>" + data.artist + " - " + song_name + "</h1>" +
                                     "<iframe width='680' height='360' src='https://www.youtube.com/embed/" +
                                     data.url + "'frameborder='0' allowfullscreen></iframe>" + "<br><br> " +
@@ -80,6 +95,29 @@
                         }
                     })
                 });
+                $(".img").click(function(){
+                    var song_name = $(this).attr('name');
+
+                    $.ajax({
+                        type:'GET',
+                        url:'song/get_song_info.php',
+                        dataType : "json",
+                        data : {song_name : song_name},
+                        success:function(data){
+                            if(data.status=='ok'){
+                                $("div#video").html(
+                                    "<h1>" + data.artist + " - " + song_name + "</h1>" +
+                                    "<iframe width='680' height='360' src='https://www.youtube.com/embed/" +
+                                    data.url + "'frameborder='0' allowfullscreen></iframe>" + "<br><br> " +
+                                    "<a href='https://www.youtube.com/watch?v=" + data.url + "'target='_blank'>Youtube에서 보기</a>"
+                                );
+                            }
+                            else {
+                                alert("Error");
+                            }
+                        }
+                    })                  
+                });
             });
         </script>
     </head>
@@ -89,9 +127,10 @@
         </div>
         <br><br>
         <hr size="5">
+        <div class="wrap">
         <div id="Menu">
             <div id="search">
-                <form name="input" action="getid.jsp" method="get">
+                <form name="input" method="get">
                     검색 내용 : 
                     <input style="width:110px" type="text" name="song">
                     <input type="submit" value="검색">
@@ -103,7 +142,17 @@
                 ?>
             </div>
         </div>
-        <div class="video">
+        <div id="video">                    
+            <?php
+                $song = $_GET['song'];
+
+                if($song) {
+                    include 'song/search_song.php';
+                }
+                else {
+                    echo "<h1> Please Search Any Artists or Song Name! </h1>";
+                }
+            ?>
         </div>
         <div class="recommend">
         </div>
