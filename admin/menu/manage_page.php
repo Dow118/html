@@ -13,7 +13,9 @@
                         $page_num = $page*20;
                         $data_num = 20;
                           
-                        echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'><span id='span_0' style='CURSOR: hand' value='asc' onclick=\"document.getElementById(\"span_0\").value=(document.getElementById(\"span_0\").value=='asc')?'desc':'asc';location.href='./manage.html?page=$page&sortByNum='+this.value\">번  호</span> 
+                        echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'><span id='span_0' style='CURSOR: hand' value='asc' 
+                        onclick=\"document.getElementById('span_0').value=(document.getElementById('span_0').value=='asc')?'desc':'asc';
+                        location.href='./manage.html?page=$page&sortByNum='+this.value\">번  호</span> 
                         </th><th>아티스트</th><th class='large'>곡  명</th><th>주소값</th><th class='small'>장 르</th><th>등록일자</th></tr>";
 
                           $result = mysqli_query($connect,"select * from info order by song_no $order_number limit $page_num,$data_num");
