@@ -32,7 +32,7 @@
     <br>
     <?php
     session_start();
-    if(!isset($_SESSION['admin'])){
+    if(isset($_SESSION['admin'])){
     ?>
     <form method="post" action="./insert_action.php">
       <label class="headline">아래 양식을 작성해주세요</b></label><br>
