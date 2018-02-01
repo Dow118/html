@@ -11,10 +11,11 @@
         
                         echo "<table class='type03' style='table-layout:fixed'>
                         <tr>
-                        <th class='small' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';>번  호</th>
+                        <th class='small'><a onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';>번  호</a>
                         <div style='display: none'>
                         내용
                         </div>
+                        </th>
                         <th>아티스트</th>
                         <th class='large'>곡  명</th>
                         <th>주소값</th>
