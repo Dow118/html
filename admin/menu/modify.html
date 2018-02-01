@@ -28,11 +28,18 @@
   <button type="button" onclick="location.href='/index.html'"  class="button" id="button_back"> 메인 </button>
   <button type="button" onclick="location.href='/admin/menu.html'" class="button" id="button_back"> 관리 </button>
   <br>
-  <label class="headline">아래 양식을 작성해주세요</b></label><br>
   <?php
-  
-  include './modify.php';
-  
+    session_start();
+    if(!isset($_SESSION['admin'])){
+
+      echo "<label class='headline'>아래 양식을 작성해주세요</b></label><br>";
+
+      include './modify.php';
+    }
+    else{
+      echo "<b>관리자로 로그인 해주세요</b>";
+      echo "<button type='button' onclick=\"location.href='/admin/index.html'\"  class='button' id='button_back'> 돌아가기 </button>";
+     }
   ?>
   
   <br><br>
