@@ -11,7 +11,7 @@
         
                         echo "<table class='type03' style='table-layout:fixed'>
                         <tr>
-                        <th class='small'><a onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';>번  호</a>
+                        <th class='small'><span onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';>번  호</span>
                         <div style='display: none'>
                         내용
                         </div>
