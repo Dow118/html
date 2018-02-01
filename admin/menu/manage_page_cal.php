@@ -14,7 +14,7 @@ while($total>-1){
 }
 
 if(!$_GET['sortByNum']){
-  $sortByNum = 0;
+  $sortByNum = 'asc';
 }
 else{
   $sortByNum = $_GET['sortByNum'];
