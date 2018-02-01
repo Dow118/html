@@ -20,16 +20,8 @@
                             $result = mysqli_query($connect,"select * from info order by song_no desc limit $page_num,$data_num");
                         }
         
-                        getData($result);
                         
-                        echo "</table>";
-    }
-    else
-      echo "select page below <br>";
-
-
-    function getData($result){
-        while($row=mysqli_fetch_row($result)){
+                        while($row=mysqli_fetch_row($result)){
                           echo "<form method='POST' action = './delete_action.php'>";
                           echo "<input type='hidden' name='key' value='$row[0]'/>";  
                           echo "<tr><td class='small'>$row[0] </td><td> $row[1] </td><td class='large'> $row[2] </td><td> $row[3] </td><td class='small'> $row[4] </td><td> $row[5] </td>";
@@ -39,7 +31,13 @@
                           echo "<input type='hidden' name='key' value='$row[0]'>";
                           echo "<td class='button'><input type='submit' value='modify' id='button_modify'/></td>";
                           echo "</form></tr>";
-        }
+                        }
+                        
+                        echo "</table>";
     }
+    else
+      echo "select page below <br>";
+
+
     ?>
 
