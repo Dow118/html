@@ -13,7 +13,7 @@ if(!isset($_SESSION['admin'])){
   echo "<input type='submit' value='입력받기'> </b></form>";
 }       
 else{
-  echo "<button type='button' onclick=\"location.href='/menu.html'\" id='button_back'> 메인 </button>";
+  echo "<button type='button' onclick=\"location.href='./menu.html'\" id='button_back'> 메인 </button>";
 }
 
 ?>
