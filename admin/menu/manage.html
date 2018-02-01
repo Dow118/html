@@ -78,9 +78,16 @@ table.type03 td.button{
   <br>
   <div class="body_table">
 <?php
-  include './manage_page.php';
+    session_start();
+    if(!isset($_SESSION['admin'])){
+      include './manage_page.php';
 
-  include './manage_page_cal.php';
+      include './manage_page_cal.php';
+    }
+    else{
+      echo "<b>관리자로 로그인 해주세요</b>";
+      echo "<button type='button' onclick=\"location.href='/admin/index.html'\"  class='button' id='button_back'> 돌아가기 </button>";
+     }
 ?>
   </div>
 
