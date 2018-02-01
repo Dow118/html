@@ -79,7 +79,7 @@ table.type03 td.button{
   <div class="body_table">
 <?php
     session_start();
-    if(!isset($_SESSION['admin'])){
+    if(isset($_SESSION['admin'])){
       include './manage_page.php';
 
       include './manage_page_cal.php';
