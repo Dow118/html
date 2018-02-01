@@ -3,6 +3,8 @@
     session_destroy();
 
     include 'song/random_song.php';
+    
+    echo "<script> $(window).unload( function () { alert('Bye now!'); } );";
 ?>
 
 <!DOCTYPE html>
