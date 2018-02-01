@@ -2,17 +2,14 @@
     <head> 
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title> 페이지 관리 </title>
     </head>
     <body>
-        <h1>관리자 페이지로 접속합니다</h1>
-        <p>비밀번호를 입력해주세요</p>
+        <title> 페이지 관리 </title>
+        <?php
+
+        include './login.php';
         
-        <form action="./login_action.php" method="post">
-        <label> password : </label> <input type="text" name="isPassword">
-        
-       <input type="submit" value="입력받기"> </b>
-       </form>
+        ?>
     </body>
 
         
