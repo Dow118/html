@@ -26,14 +26,14 @@
     </style>
   </head>
   <body>
-    <?php
-    session_start();
-    if(!isset($_SESSION['admin'])){
-    ?>
     <title>DB TEST</title>
     <button type="button" onclick="location.href='/index.html'"  class="button" id="button_back"> 메인 </button>
     <button type="button" onclick="location.href='/admin/menu.html'" class="button" id="button_back"> 관리 </button>
     <br>
+    <?php
+    session_start();
+    if(!isset($_SESSION['admin'])){
+    ?>
     <form method="post" action="./insert_action.php">
       <label class="headline">아래 양식을 작성해주세요</b></label><br>
     
