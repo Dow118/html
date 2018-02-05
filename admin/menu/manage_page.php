@@ -34,16 +34,17 @@
     if(!$_POST['filterByDate_start']){
         $filter_startdate = "2018-01-01";
     else{
-        $filter_startdate = $_GET['filterByDate_start'];
+        $filter_startdate = $_POST['filterByDate_start'];
     }
 
     if(!$_POST['filterByDate_finish']){
         $filter_finishdate = date("Y-m-d");
     else{
-        $filter_finishdate = $_GET['filterByDate_start'];
+        $filter_finishdate = $_POST['filterByDate_start'];
     }
         
     if($page>-1){
+                        echo "<script>alert("start");</script>";
                         include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
         
                         $page_num = $page*20;
@@ -98,7 +99,9 @@
                         $query_result = $query.$query2.$query3.$query4;
         
                         $result = mysqli_query($connect, $query_result);
-        
+                        if(!$result){
+                            echo "<script>alert("query error");</script>";
+                        }
                           while($row=mysqli_fetch_row($result)){
                           echo "<form method='POST' action = './delete_action.php'>";
                           echo "<input type='hidden' name='key' value='$row[0]'/>";  
