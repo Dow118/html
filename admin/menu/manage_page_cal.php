@@ -20,10 +20,10 @@ else{
   $sortByNum = $_GET['sortByNum'];
 }
 if(!$_GET['sortByArtist']){
-  $sortByNum = 'null';
+  $sortByArtist = 'null';
 }
 else{
-  $sortByNum = $_GET['sortByArtist'];
+  $sortByArtist = $_GET['sortByArtist'];
 }
 for($j = count($number)-1; $j>-1; $j--){
   $pagenumber = $number[$j] - 1;
