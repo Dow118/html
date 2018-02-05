@@ -25,7 +25,7 @@
                         $data_num = 20;
         
                         echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'>
-                                <span id=$order_number style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&sortByNum='+this.id+'&sortByArtist=$order_artist\">번  호</span></th>
+                                <span id=$order_number style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&sortByNum='+this.id+'&sortByArtist=$order_artist\'">번  호</span></th>
                                 <th><span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >아티스트</span><div style='display: none'>";
         
                         $result = mysqli_query($connect, "select distinct song_artist from info");
