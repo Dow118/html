@@ -14,7 +14,7 @@
         $order = 'asc';
     }
     else{
-        $sortBy = $_GET['order'];
+        $order = $_GET['order'];
     }
     
     if(!$_GET['filterByArtist']){
