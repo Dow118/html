@@ -39,8 +39,8 @@
                         $data_num = 20;
         
                         echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'>
-                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">번  호</span></th>
-                                <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_artist&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">아티스트</span>
+                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist&filterByCategory=$filter_category';\">번  호</span></th>
+                                <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_artist&filterByArtist=$filter_artist&filterByCategory=$filter_category';\">아티스트</span>
                                 <span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div style='display: none'>";
         
                         $result = mysqli_query($connect, "select distinct song_artist from info");
@@ -50,9 +50,9 @@
                         }           
                         echo "<input type='button' value='초기화' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=null&filterByCategory=$filter_category';\"></div></th>
                                 <th class='large'>
-                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">곡  명</span></th>
+                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategory=$filter_category';\">곡  명</span></th>
                                 <th>주소값</th>
-                                <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_category&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">장 르</span><span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div style='display: none'>";
+                                <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_category&filterByArtist=$filter_artist&filterByCategory=$filter_category';\">장 르</span><span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div style='display: none'>";
         
                         $result = mysqli_query($connect, "select distinct song_category from info");
         
@@ -60,10 +60,7 @@
                             echo "<input type='button' value='$row[0]' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=$row[0]';\"><br>";
                         }    
                         echo "<input type='button' value='초기화' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=null';\"></div></th>
-                                <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_date&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">등록일자</span>
-                                <span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span>
-                                <div style='display: none'> <input type='button' value='test'> </div>
-                                </th></tr>";
+                                <th>등록일자</th></tr>";
                         
                         $query = "select * from info";
         
