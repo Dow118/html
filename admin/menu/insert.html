@@ -34,7 +34,7 @@
     session_start();
     if(isset($_SESSION['admin'])){
     ?>
-    <form method="post" action="./insert_action.php">
+    <form name="insertform" method="post" action="./insert_action.php">
       <label class="headline">아래 양식을 작성해주세요</b></label><br>
     
       <label size>곡&emsp;&emsp;&emsp;명 : </label><input type="text" name="song_name" class="box"><br>
@@ -52,7 +52,7 @@
                         ?>
                         </select>
     <br>
-    <input type="submit" value="DB로 전송">
+    <input type="submit" value="DB로 전송" onclick="validcheck();">
     </form>
     <?php
     }
@@ -64,3 +64,17 @@
   </body>
 
 </html>
+
+
+<script>
+function validcheck(){
+  
+  form = document.insertform;
+  
+  if(form.song_name.value==""){
+    alert("곡 제목은 필수입력사항입니다");
+    location.reload();
+  }
+}
+  
+</script>
