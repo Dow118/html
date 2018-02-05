@@ -62,8 +62,7 @@
                         echo "<input type='button' value='초기화' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=null';\"></div></th>
                                 <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_date&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">등록일자</span>
                                 <span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span>
-                                <div style='display: none'>
-                                <input type='date' name='filterByDate_start' value='$filter_startdate'><input type='date' name='filterByDate_finish' value='$filter_finishdate'><input type='submit' value='검색'> </div></th></tr>";
+                                <div style='display: none'> test </div></th></tr>";
                         
                         $query = "select * from info";
         
