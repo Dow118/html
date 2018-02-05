@@ -79,7 +79,7 @@
                         
                         $query = "select * from info";
         
-                        $query2 = " where '$filter_finishdate'>song_date and song_date>'$filter_startdate'";
+                        $query2 = " where '$filter_finishdate'>=song_date and song_date>='$filter_startdate'";
         
                         if($filter_artist != 'null' && $filter_category != 'null'){
                             $query3 = " and song_artist='$filter_artist' and song_category='$filter_category' ";
