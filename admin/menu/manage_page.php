@@ -45,20 +45,20 @@
                         $result = mysqli_query($connect, "select distinct song_artist from info");
         
                         while($row=mysqli_fetch_row($result)){
-                            echo "<input type='text' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$row[0]&filterByCategory=$filter_category';\"> $row[0]<br>";
+                            echo "<input type='button' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$row[0]&filterByCategory=$filter_category';\"> $row[0]<br>";
                         }           
-                        echo "<input type='text' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=null&filterByCategory=$filter_category';\"> 초기화</div></th>
+                        echo "<input type='button' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=null&filterByCategory=$filter_category';\"> 초기화</div></th>
                                 <th class='large'>
                                 <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">곡  명</span></th>
                                 <th>주소값</th>
-                                <th class='small'><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_category&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">장 르</span><span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div style='display: none'>";
+                                <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_category&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">장 르</span><span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div style='display: none'>";
         
                         $result = mysqli_query($connect, "select distinct song_category from info");
         
                         while($row=mysqli_fetch_row($result)){
-                            echo "<input type='text' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=$row[0]';\"> $row[0]<br>";
+                            echo "<input type='button' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=$row[0]';\"> $row[0]<br>";
                         }    
-                        echo "<input type='text' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=null';\"> 초기화</div></th>
+                        echo "<input type='button' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=null';\"> 초기화</div></th>
                                 <th>등록일자</th></tr>";
                         
                         $query = "select * from info";
