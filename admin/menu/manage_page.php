@@ -21,7 +21,7 @@
                         onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&sortByNum='+this.id\">번  호</span> 
                         </th>
                         <th><span id=order_artist style='CURSOR: hand'  
-                        onclick=\"this.nextSibling.style.display=(this.nextSibling.style.display=='none'?'block':'none';\">아티스트</span>
+                        onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';>아티스트</span>
                         <div style='display: none'>";
         
                         $result = mysqli_query($connect, "select distinct song_artist from info");
