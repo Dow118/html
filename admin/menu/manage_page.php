@@ -1,12 +1,15 @@
 
     <?php
+
     $page = $_GET['page'];
+
     if(!$_GET['sortByNum']){
         $order_number = 'asc';
     }   
     else{
-    $order_number = $_GET['sortByNum'];
+        $order_number = $_GET['sortByNum'];
     }
+
     if($page>-1){
                         include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
         
@@ -15,7 +18,11 @@
                           
                         echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'><span id=$order_number style='CURSOR: hand'  
                         onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&sortByNum='+this.id\">번  호</span> 
-                        </th><th>아티스트</th><th class='large'>곡  명</th><th>주소값</th><th class='small'>장 르</th><th>등록일자</th></tr>";
+                        </th><th>아티스트</th>
+                        <th class='large'>곡  명</th>
+                        <th>주소값</th>
+                        <th class='small'>장 르</th>
+                        <th>등록일자</th></tr>";
 
                           $result = mysqli_query($connect,"select * from info order by song_no $order_number limit $page_num,$data_num");
 
