@@ -27,18 +27,8 @@
         $filter_category = $_GET['filterByCategory'];
     }
 
-
-    if(!$_POST['filterByDate_start']){
         $filter_startdate = "2018-01-01";
-    else{
-        $filter_startdate = $_POST['filterByDate_start'];
-    }
-
-    if(!$_POST['filterByDate_finish']){
         $filter_finishdate = "2018-02-05";
-    else{
-        $filter_finishdate = $_POST['filterByDate_finish'];
-    }
 
         
     if($page>-1){
