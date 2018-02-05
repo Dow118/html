@@ -16,9 +16,19 @@
                         $page_num = $page*20;
                         $data_num = 20;
                           
-                        echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'><span id=$order_number style='CURSOR: hand'  
+                        echo "<table class='type03' style='table-layout:fixed'><tr>
+                        <th class='small'><span id=$order_number style='CURSOR: hand'  
                         onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&sortByNum='+this.id\">번  호</span> 
-                        </th><th>아티스트</th>
+                        </th>
+                        <th><span id=order_artist style='CURSOR: hand'  
+                        onclick=\"this.nextSibling.style.display=(this.nextSibling.style.display=='none'?'block':'none';>아티스트</span>
+                        <div style='display: none'>";
+        
+                        $result = mysqli_query($connect, "select distinct song_artist from info");
+                        while($row=mysqli_fetch_row($result)){
+                            echo "<input type='checkbox' value='$row[0]'> $row[0]<br>";
+                        }                            
+                        echo "</div></th>
                         <th class='large'>곡  명</th>
                         <th>주소값</th>
                         <th class='small'>장 르</th>
