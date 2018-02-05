@@ -24,6 +24,13 @@
         $filter_artist = $_GET['filterByArtist'];
     }
 
+    if(!$_GET['filterByCategory']){
+        $filter_category = 'null';
+    }
+    else{
+        $filter_category = $_GET['filterByCategory'];
+    }
+
     if($page>-1){
                         include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
         
@@ -31,34 +38,41 @@
                         $data_num = 20;
         
                         echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'>
-                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist'\">번  호</span></th>
+                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist&filterByCategoty=$filter_category'\">번  호</span></th>
                                 <th><span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >아티스트</span><div style='display: none'>";
         
                         $result = mysqli_query($connect, "select distinct song_artist from info");
         
                         while($row=mysqli_fetch_row($result)){
-                            echo "<input type='radio' id='$row[0]' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$row[0]';\"> $row[0]<br>";
+                            echo "<input type='radio' id='$row[0]' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$row[0]&filterByCategory=$filter_category';\"> $row[0]<br>";
                         }           
                         echo "</div></th>
                                 <th class='large'>
-                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist'\">곡  명</span></th>
+                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategoty=$filter_category'\">곡  명</span></th>
                                 <th>주소값</th>
                                 <th class='small'><span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >장 르</span><div style='display: none'>";
         
                         $result = mysqli_query($connect, "select distinct song_category from info");
         
                         while($row=mysqli_fetch_row($result)){
-                            echo "<input type='radio' id='$row[0]' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist='+this.id;\"> $row[0]<br>";
+                            echo "<input type='radio' id='$row[0]' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=$row[0]\"> $row[0]<br>";
                         }    
                         echo "</div></th>
                                 <th>등록일자</th></tr>";
                         
                         $query = "select * from info";
         
-                        if($filter_artist != 'null'){
+                        if($filter_artist != 'null' && $filter_category != 'null'){
+                            $query2 = " where song_artist='$filter_artist' and song_category='$filter_category' ";
+                        }
+                        else if($filter_artist == 'null' && $filter_category != 'null'){
+                            $query2 = " where song_category='$filter_category' ";
+                        }
+                        else if($filter_artist != 'null' && $filter_categoty == 'null'){
                             $query2 = " where song_artist='$filter_artist' ";
                         }
                         else $query2 = " ";
+        
                         $query3 = "order by $sortBy $order limit $page_num,$data_num";
                         $query_result = $query.$query2.$query3;
         
