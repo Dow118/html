@@ -35,11 +35,17 @@ while($total>-1){
         $filter_artist = $_GET['filterByArtist'];
     }
 
+    if(!$_GET['filterByCategory']){
+        $filter_category = 'null';
+    }
+    else{
+        $filter_category = $_GET['filterByCategory'];
+    }
 
 for($j = count($number)-1; $j>-1; $j--){
   $pagenumber = $number[$j] - 1;
   //echo "<a href='./manage.html?page=$pagenumber' class='page'> $number[$j] </a>";
-  echo "<button type='button' onclick=\"location.href='./manage.html?page=$pagenumber&sortBy=$sortBy&order=$order&filterByArtist=$filter_artist'\" class='page'> $number[$j] </button>";
+  echo "<button type='button' onclick=\"location.href='./manage.html?page=$pagenumber&sortBy=$sortBy&order=$order&filterByArtist=$filter_artist&filterByCategory=$filter_category'\" class='page'> $number[$j] </button>";
 }
 
   
