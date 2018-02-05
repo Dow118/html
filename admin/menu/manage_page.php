@@ -37,11 +37,11 @@
                         $result = mysqli_query($connect, "select distinct song_artist from info");
         
                         while($row=mysqli_fetch_row($result)){
-                            echo "<input type='radio' id='$row[0]' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist='+this.id;\"> $row[0]<br>";
+                            echo "<input type='radio' id='$row[0]' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$row[0]';\"> $row[0]<br>";
                         }           
                         echo "</div></th>
                                 <th class='large'>
-                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist\">곡  명</span></th>
+                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist'\">곡  명</span></th>
                                 <th>주소값</th>
                                 <th class='small'><span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >장 르</span><div style='display: none'>";
         
