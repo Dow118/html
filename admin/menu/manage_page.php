@@ -39,7 +39,7 @@
         $filter_finishdate = $_POST['$filter_finishdate'];
     }
     else{
-        $filter_finishdate = date("Y-d-m");
+        $filter_finishdate = date("Y-m-d");
     }
 
         
