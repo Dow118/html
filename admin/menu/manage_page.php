@@ -42,7 +42,7 @@
                         $query = "select * from info";
         
                         if($order_artist != 'null'){
-                            $query2 = " where song_artist=$order_artist ";
+                            $query2 = " where song_artist='$order_artist' ";
                         }
                         else $query2 = " ";
                         
