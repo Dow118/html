@@ -30,18 +30,8 @@
         $filter_category = $_GET['filterByCategory'];
     }
 
-    if(!$_POST['filterByDate_start']){
         $filter_startdate = "2018-01-01";
-    else{
-        $filter_startdate = $_POST['filterByDate_start'];
-    }
-
-    if(!$_POST['filterByDate_finish']){
         $filter_finishdate = "2018-02-05";
-    else{
-        $filter_finishdate = $_POST['filterByDate_finish'];
-    }
-        
     if($page>-1){
                         include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
         
@@ -77,16 +67,14 @@
                         
                         $query = "select * from info";
         
-                        $query2 = " where '$filter_finishdate'>song_date and song_date>'$filter_startdate' ";
-        
                         if($filter_artist != 'null' && $filter_category != 'null'){
-                            $query3 = "and song_artist='$filter_artist' and song_category='$filter_category' ";
+                            $query3 = "where song_artist='$filter_artist' and song_category='$filter_category' ";
                         }
                         else if($filter_artist == 'null' && $filter_category != 'null'){
-                            $query3 = "and song_category='$filter_category' ";
+                            $query3 = "where song_category='$filter_category' ";
                         }
                         else if($filter_artist != 'null' && $filter_category == 'null'){
-                            $query3 = "and song_artist='$filter_artist' ";
+                            $query3 = "where song_artist='$filter_artist' ";
                         }
                         else $query3 = " ";
         
@@ -94,7 +82,7 @@
         
                         $query4 = "order by $sortBy $order limit $page_num,$data_num";
         
-                        $query_result = $query.$query2.$query3.$query4;
+                        $query_result = $query.$query3.$query4;
         
                         $result = mysqli_query($connect, $query_result);
         
