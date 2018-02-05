@@ -28,14 +28,14 @@
         $filter_category = $_GET['filterByCategory'];
     }
 
-    if(isset($_POST['$filter_startdate'])){
+    if(isset($_POST['filterByDate_start'])){
         $filter_startdate = $_POST['$filter_startdate'];
     }
     else{
         $filter_startdate = "2018-01-01";
     }
 
-    if(isset($_POST['$filter_finishdate'])){
+    if(isset($_POST['filterByDate_finish'])){
         $filter_finishdate = $_POST['$filter_finishdate'];
     }
     else{
