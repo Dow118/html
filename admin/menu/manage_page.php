@@ -29,14 +29,14 @@
     }
 
     if(isset($_POST['filterByDate_start'])){
-        $filter_startdate = $_POST['$filter_startdate'];
+        $filter_startdate = $_POST['filterByDate_start'];
     }
     else{
         $filter_startdate = "2018-01-01";
     }
 
     if(isset($_POST['filterByDate_finish'])){
-        $filter_finishdate = $_POST['$filter_finishdate'];
+        $filter_finishdate = $_POST['filterByDate_finish'];
     }
     else{
         $filter_finishdate = date("Y-m-d");
