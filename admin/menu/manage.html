@@ -101,7 +101,7 @@ function checkbox_event(chkbox)
 if ( chkbox.checked )
 {
    chkbox.checkd = "checked";
-   location.href='./manage.html?page=0&sortByNum=asc&sortByArtist='+chkbox.id;
+   location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist='+chkbox.id;
 }
 }
   
