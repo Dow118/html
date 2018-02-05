@@ -26,6 +26,21 @@
     else{
         $filter_category = $_GET['filterByCategory'];
     }
+
+
+    if(!$_POST['filterByDate_start']){
+        $filter_startdate = "2018-01-01";
+    else{
+        $filter_startdate = $_POST['filterByDate_start'];
+    }
+
+    if(!$_POST['filterByDate_finish']){
+        $filter_finishdate = date("Y-m-d");
+    else{
+        $filter_finishdate = $_POST['filterByDate_finish'];
+    }
+
+        
     if($page>-1){
                         include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
         
@@ -55,11 +70,12 @@
                         }    
                         echo "<input type='button' value='초기화'onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=null';\"></div></th>
                                 <th>등록일자<span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div style='display: none'>
-                                <input type='button' value='test'></div></th></tr>";
+                                <input type='date' name='filterByDate_start' value='$filter_startdate'>
+                                <input type='date' name='filterByDate_finish' value='$filter_finishdate'></div></th></tr>";
                         
                         $query = "select * from info";
         
-                        $query2 = " where '2018-02-05'>song_date and song_date>'2018-01-01'";
+                        $query2 = " where '$filter_finishdate'>song_date and song_date>'$filter_startdate'";
         
                         if($filter_artist != 'null' && $filter_category != 'null'){
                             $query3 = " and song_artist='$filter_artist' and song_category='$filter_category' ";
