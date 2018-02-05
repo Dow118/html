@@ -38,7 +38,7 @@
                         $data_num = 20;
         
                         echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'>
-                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist&filterByCategoty=$filter_category'\">번  호</span></th>
+                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">번  호</span></th>
                                 <th><span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >아티스트</span><div style='display: none'>";
         
                         $result = mysqli_query($connect, "select distinct song_artist from info");
@@ -48,7 +48,7 @@
                         }           
                         echo "</div></th>
                                 <th class='large'>
-                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategoty=$filter_category'\">곡  명</span></th>
+                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">곡  명</span></th>
                                 <th>주소값</th>
                                 <th class='small'><span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >장 르</span><div style='display: none'>";
         
@@ -68,7 +68,7 @@
                         else if($filter_artist == 'null' && $filter_category != 'null'){
                             $query2 = " where song_category='$filter_category' ";
                         }
-                        else if($filter_artist != 'null' && $filter_categoty == 'null'){
+                        else if($filter_artist != 'null' && $filter_category == 'null'){
                             $query2 = " where song_artist='$filter_artist' ";
                         }
                         else $query2 = " ";
