@@ -56,7 +56,7 @@
                         $query = "select * from info";
         
                         if($filter_artist != 'null'){
-                            $query2 = " where song_artist='$order_artist' ";
+                            $query2 = " where song_artist='$filter_artist' ";
                         }
                         else $query2 = " ";
                         $query3 = "order by $sortBy $order limit $page_num,$data_num";
