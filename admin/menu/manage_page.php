@@ -45,7 +45,8 @@
                                 <th class='large'>
                                 <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">곡  명</span></th>
                                 <th>주소값</th>
-                                <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_category&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">장 르</span><span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div style='display: none'>";
+                                <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_category&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">장 르</span>
+                                <span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div style='display: none'>";
         
                         $result = mysqli_query($connect, "select distinct song_category from info");
         
@@ -53,23 +54,26 @@
                             echo "<input type='button' value='$row[0]' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=$row[0]';\"><br>";
                         }    
                         echo "<input type='button' value='초기화'onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=null';\"></div></th>
-                                <th>등록일자</th></tr>";
+                                <th>등록일자<span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span>
+                                <div style='display: none'><input type='button' value='test'></div></th></tr>";
                         
                         $query = "select * from info";
         
+                        $query2 = "where '2018-02-05'>song_date and song_date>'2018-01-01'";
+        
                         if($filter_artist != 'null' && $filter_category != 'null'){
-                            $query2 = " where song_artist='$filter_artist' and song_category='$filter_category' ";
+                            $query3 = " and song_artist='$filter_artist' and song_category='$filter_category' ";
                         }
                         else if($filter_artist == 'null' && $filter_category != 'null'){
-                            $query2 = " where song_category='$filter_category' ";
+                            $query3 = " and song_category='$filter_category' ";
                         }
                         else if($filter_artist != 'null' && $filter_category == 'null'){
-                            $query2 = " where song_artist='$filter_artist' ";
+                            $query3 = " and song_artist='$filter_artist' ";
                         }
-                        else $query2 = " ";
+                        else $query3 = " ";
         
-                        $query3 = "order by $sortBy $order limit $page_num,$data_num";
-                        $query_result = $query.$query2.$query3;
+                        $query4 = "order by $sortBy $order limit $page_num,$data_num";
+                        $query_result = $query.$query2.$query3.$query4;
         
                         $result = mysqli_query($connect, $query_result);
         
