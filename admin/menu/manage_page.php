@@ -37,7 +37,7 @@
     }
 
     if(!$_POST['filterByDate_finish']){
-        $filter_finishdate = date("Y-m-d");
+        $filter_finishdate = "2018-02-05";
     else{
         $filter_finishdate = $_POST['filterByDate_finish'];
     }
