@@ -47,8 +47,9 @@
                         else $query2 = " ";
                         
                         $query3 = "order by song_no $order_number limit $page_num,$data_num";
+                        $query_result = $query.$query2.$query3;
         
-                        $result = mysqli_query($connect,$query.$query2.$query3);
+                        $result = mysqli_query($connect, $query_result);
         
                           while($row=mysqli_fetch_row($result)){
                           echo "<form method='POST' action = './delete_action.php'>";
