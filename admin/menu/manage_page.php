@@ -78,18 +78,20 @@
                         
                         $query = "select * from info";
         
+                        $query2 = " where ".$filter_startdate.">song_date and song_date>".$filter_finishdate;
+        
                         if($filter_artist != 'null' && $filter_category != 'null'){
-                            $query2 = " where song_artist='$filter_artist' and song_category='$filter_category' ";
+                            $query3 = " and song_artist='$filter_artist' and song_category='$filter_category' ";
                         }
                         else if($filter_artist == 'null' && $filter_category != 'null'){
-                            $query2 = " where song_category='$filter_category' ";
+                            $query3 = " and song_category='$filter_category' ";
                         }
                         else if($filter_artist != 'null' && $filter_category == 'null'){
-                            $query2 = " where song_artist='$filter_artist' ";
+                            $query3 = " and song_artist='$filter_artist' ";
                         }
-                        else $query2 = " ";
+                        else $query3 = " ";
         
-                        $query3 = "and ".$filter_startdate.">song_date and song_date>".$filter_finishdate." ";
+                        
         
                         $query4 = "order by $sortBy $order limit $page_num,$data_num";
         
