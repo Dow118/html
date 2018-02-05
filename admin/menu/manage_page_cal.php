@@ -1,8 +1,9 @@
 <?php
 
 include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
-
-$result = mysqli_query($connect,"select song_no from info;");
+if(!$result){
+  $result = mysqli_query($connect,"select song_no from info;");
+}
 
 $total = mysqli_num_rows($result);
 $i=0;
