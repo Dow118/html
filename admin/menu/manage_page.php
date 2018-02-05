@@ -1,5 +1,4 @@
-
-    <?php
+<?php
     $page = $_GET['page'];
     
     if(!$_GET['sortBy']){
@@ -8,7 +7,6 @@
     else{
         $sortBy = $_GET['sortBy'];
     }
-
     if(!$_GET['order']){
         $order = 'asc';
     }
@@ -22,16 +20,12 @@
     else{
         $filter_artist = $_GET['filterByArtist'];
     }
-
     if(!$_GET['filterByCategory']){
         $filter_category = 'null';
     }
     else{
         $filter_category = $_GET['filterByCategory'];
     }
-
-        $filter_startdate = "2018-01-01";
-        $filter_finishdate = "2018-02-05";
     if($page>-1){
                         include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
         
@@ -39,8 +33,8 @@
                         $data_num = 20;
         
                         echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'>
-                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist&filterByCategory=$filter_category';\">번  호</span></th>
-                                <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_artist&filterByArtist=$filter_artist&filterByCategory=$filter_category';\">아티스트</span>
+                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">번  호</span></th>
+                                <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_artist&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">아티스트</span>
                                 <span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div style='display: none'>";
         
                         $result = mysqli_query($connect, "select distinct song_artist from info");
@@ -50,9 +44,9 @@
                         }           
                         echo "<input type='button' value='초기화' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=null&filterByCategory=$filter_category';\"></div></th>
                                 <th class='large'>
-                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategory=$filter_category';\">곡  명</span></th>
+                                <span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">곡  명</span></th>
                                 <th>주소값</th>
-                                <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_category&filterByArtist=$filter_artist&filterByCategory=$filter_category';\">장 르</span><span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div style='display: none'>";
+                                <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_category&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">장 르</span><span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div style='display: none'>";
         
                         $result = mysqli_query($connect, "select distinct song_category from info");
         
@@ -65,25 +59,22 @@
                         $query = "select * from info";
         
                         if($filter_artist != 'null' && $filter_category != 'null'){
-                            $query3 = "where song_artist='$filter_artist' and song_category='$filter_category' ";
+                            $query2 = " where song_artist='$filter_artist' and song_category='$filter_category' ";
                         }
                         else if($filter_artist == 'null' && $filter_category != 'null'){
-                            $query3 = "where song_category='$filter_category' ";
+                            $query2 = " where song_category='$filter_category' ";
                         }
                         else if($filter_artist != 'null' && $filter_category == 'null'){
-                            $query3 = "where song_artist='$filter_artist' ";
+                            $query2 = " where song_artist='$filter_artist' ";
                         }
-                        else $query3 = " ";
+                        else $query2 = " ";
         
-                        
-        
-                        $query4 = "order by $sortBy $order limit $page_num,$data_num";
-        
-                        $query_result = $query.$query3.$query4;
+                        $query3 = "order by $sortBy $order limit $page_num,$data_num";
+                        $query_result = $query.$query2.$query3;
         
                         $result = mysqli_query($connect, $query_result);
         
-                        while($row=mysqli_fetch_row($result)){
+                          while($row=mysqli_fetch_row($result)){
                           echo "<form method='POST' action = './delete_action.php'>";
                           echo "<input type='hidden' name='key' value='$row[0]'/>";  
                           echo "<tr><td class='small'>$row[0] </td><td> $row[1] </td><td class='large'> $row[2] </td><td> $row[3] </td><td class='small'> $row[4] </td><td> $row[5] </td>";
@@ -93,9 +84,8 @@
                           echo "<input type='hidden' name='key' value='$row[0]'>";
                           echo "<td class='button'><input type='submit' value='modify' id='button_modify'/></td>";
                           echo "</form></tr>";
-                        }
+                          }
                         echo "</table>";
     }
     else
-      echo "select page below <br>";
-    ?>
+      echo "select page below <br>
