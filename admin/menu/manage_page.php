@@ -43,7 +43,6 @@
     }
         
     if($page>-1){
-                        echo "<script>alert("start");</script>";
                         include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
         
                         $page_num = $page*20;
@@ -73,11 +72,12 @@
                         echo "<input type='button' value='초기화' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=null';\"></div></th>
                                 <th><span id=$order style='CURSOR: hand' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_artist&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">등록일자</span>
                                 <span style='CURSOR: hand' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span>
-                                <div style='display: none'> </div></th></tr>";
+                                <div style='display: none'><form name='filter_date' method='post' action='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=$row[0]'>
+                                <input type='date' name='filterByDate_start' value=$filter_finishdate><input type='date' name='filterByDate_finish' value=$filter_finishdate><input type='submit' value='검색'></form> </div></th></tr>";
                         
                         $query = "select * from info";
         
-                        $query2 = " where ".$filter_startdate.">song_date and song_date>".$filter_finishdate." ";
+                        $query2 = " where ".$filter_finishdate.">song_date and song_date>".$filter_startdate." ";
         
                         if($filter_artist != 'null' && $filter_category != 'null'){
                             $query3 = "and song_artist='$filter_artist' and song_category='$filter_category' ";
@@ -97,10 +97,8 @@
                         $query_result = $query.$query2.$query3.$query4;
         
                         $result = mysqli_query($connect, $query_result);
-                        if(!$result){
-                            echo "<script>alert("query error");</script>";
-                        }
-                          while($row=mysqli_fetch_row($result)){
+        
+                        while($row=mysqli_fetch_row($result)){
                           echo "<form method='POST' action = './delete_action.php'>";
                           echo "<input type='hidden' name='key' value='$row[0]'/>";  
                           echo "<tr><td class='small'>$row[0] </td><td> $row[1] </td><td class='large'> $row[2] </td><td> $row[3] </td><td class='small'> $row[4] </td><td> $row[5] </td>";
@@ -110,7 +108,7 @@
                           echo "<input type='hidden' name='key' value='$row[0]'>";
                           echo "<td class='button'><input type='submit' value='modify' id='button_modify'/></td>";
                           echo "</form></tr>";
-                          }
+                        }
                         echo "</table>";
     }
     else
