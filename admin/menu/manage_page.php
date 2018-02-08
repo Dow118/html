@@ -58,9 +58,9 @@
                         $result = mysqli_query($connect, "select distinct song_artist from info");
         
                         while($row=mysqli_fetch_row($result)){
-                            echo "<input class='optionbutton' type='submit' id='$row[0]' value='$row[0]'><br>";           
+                            echo "<input class='optionbutton' type='submit' name='filterByArtist' value='$row[0]'><br>";           
                         }           
-                        echo "<input class='optionbutton' type='submit' id='초기화' value='초기화'></div></th>
+                        echo "<input class='optionbutton' type='submit' name='filterByArtist' value='null'></div></th>
                                 <th class='large'>
                                 <span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">곡  명</span></th>
                                 <th>주소값</th>
