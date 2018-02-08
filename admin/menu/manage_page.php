@@ -70,9 +70,9 @@
                         $result = mysqli_query($connect, "select distinct song_category from info");
         
                         while($row=mysqli_fetch_row($result)){
-                            echo "<input class='optionbutton' type='submit' id='$row[0]' value='$row[0]'><br>";
+                            echo "<input class='optionbutton' type='submit' name='filterByCategory' value='$row[0]'><br>";
                         }    
-                        echo "<input class='optionbutton' type='submit' id='초기화' value='초기화' ></div></th>
+                        echo "<input class='optionbutton' type='submit' id='filterByCategory' value='null' ></div></th>
                                 <th>등록일자<span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>
                                 
                                 <input type='date' name='filterByDate_start' value='$filter_startdate'>
