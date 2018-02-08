@@ -58,7 +58,7 @@
                         $result = mysqli_query($connect, "select distinct song_artist from info");
                         echo "<input type='hidden' name='filterByArtist' id='filter_artist' value='$filter_artist'>";
                         while($row=mysqli_fetch_row($result)){
-                            echo "<input class='optionbutton' type='submit' onsubmit='filter($row[0]);'\"><br>";           
+                            echo "<input class='optionbutton' type='submit' value='$row[0]' onsubmit='filter($row[0]);'\"><br>";           
                         }           
                         echo "<input class='optionbutton' type='submit' value='초기화'></div></th>
                                 <th class='large'>
