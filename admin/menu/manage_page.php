@@ -50,32 +50,34 @@
                         $data_num = 20;
         
                         echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'>
-                                <span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">번  호</span></th>
-                                <th><span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_artist&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">아티스트</span>
+                                <form method='get' action='./manage.html'>
+                                <span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">번  호</span></th>
+                                <th><span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_artist&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">아티스트</span>
                                 <span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>";
         
                         $result = mysqli_query($connect, "select distinct song_artist from info");
         
                         while($row=mysqli_fetch_row($result)){
-                            echo "<input class='optionbutton' type='button' id='$row[0]' value='$row[0]' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$row[0]&filterByCategory=$filter_category';\"><br>";                        }           
-                        echo "<input class='optionbutton' type='button' id='초기화' value='초기화' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=null&filterByCategory=$filter_category';\"></div></th>
+                            echo "<input class='optionbutton' type='submit' id='$row[0]' value='$row[0]'><br>";           
+                        }           
+                        echo "<input class='optionbutton' type='submit' id='초기화' value='초기화'></div></th>
                                 <th class='large'>
-                                <span id=$order class='option' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">곡  명</span></th>
+                                <span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">곡  명</span></th>
                                 <th>주소값</th>
-                                <th><span id=$order class='option' onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_category&filterByArtist=$filter_artist&filterByCategory=$filter_category'\">장 르</span>
+                                <th><span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_category&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">장 르</span>
                                 <span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>";
         
                         $result = mysqli_query($connect, "select distinct song_category from info");
         
                         while($row=mysqli_fetch_row($result)){
-                            echo "<input class='optionbutton' type='button' id='$row[0]' value='$row[0]' onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=$row[0]';\"><br>";
+                            echo "<input class='optionbutton' type='submit' id='$row[0]' value='$row[0]'><br>";
                         }    
-                        echo "<input class='optionbutton' type='button' id='초기화' value='초기화'onclick=\"location.href='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$filter_artist&filterByCategory=null';\"></div></th>
+                        echo "<input class='optionbutton' type='submit' id='초기화' value='초기화' ></div></th>
                                 <th>등록일자<span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>
-                                <form method='get' action='./manage.html?page=$page&order=$order&sortBy=$sortBy&filterByArtist=$row[0]&filterByCategory=$filter_category'>
+                                
                                 <input type='date' name='filterByDate_start' value='$filter_startdate'>
                                 <input type='date' name='filterByDate_finish' value='$filter_finishdate'>
-                                <input type='submit' value='입력'></div></th></tr>";
+                                <input type='submit' value='입력'></div></form></th></tr>";
                         
                         $query = "select * from info";
         
