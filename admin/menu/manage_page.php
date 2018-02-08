@@ -108,7 +108,7 @@
                           echo "<form method='POST' action = './modify.html'>";
                           echo "<input type='hidden' name='key' value='$row[0]'>";
                           echo "<td class='button'><input type='submit' value='modify' id='button_modify'/></td>";
-                          echo "</form></tr>";
+                          echo "</tr>";
                           }
                         echo "</table>";
     }
