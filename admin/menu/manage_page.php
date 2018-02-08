@@ -29,17 +29,17 @@
     }
 
     if(!$_GET['filterByDate_start']){
-        $filter_startdate = $_GET['filterByDate_start'];
+        $filter_startdate = "2018-01-01";
     }
     else{
-        $filter_startdate = "2018-01-01";
+        $filter_startdate = $_GET['filterByDate_start'];
     }
 
     if(!$_GET['filterByDate_finish']){
-        $filter_finishdate = $_GET['filterByDate_finish'];
+        $filter_finishdate = date("Y-m-d");
     }
     else{
-        $filter_finishdate = date("Y-m-d");
+        $filter_finishdate = $_GET['filterByDate_finish'];
     }
 
         
