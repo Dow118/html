@@ -50,7 +50,7 @@
                         $data_num = 20;
         
                         echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'>
-                                <form method='get' action='./manage.html'>
+                                <form method='get' action='./manage.html' onsubmit='filter();'>
                                 <span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">번 호</th>
                                 <th><span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_artist&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">아티스트</span>
                                 <span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>";
@@ -58,9 +58,9 @@
                         $result = mysqli_query($connect, "select distinct song_artist from info");
                         echo "<input type='hidden' name='filterByArtist' id='filter_artist' value='$filter_artist'>";
                         while($row=mysqli_fetch_row($result)){
-                            echo "<input class='optionbutton' type='submit' value='$row[0]' onsubmit='filter($row[0]);'\"><br>";           
+                            echo "<input class='optionbutton' type='submit' name='filterByArtist' id='submit_artist' value='$row[0]'\"><br>";           
                         }           
-                        echo "<input class='optionbutton' type='submit' value='초기화'></div></th>
+                        echo "<input class='optionbutton' type='submit' name='초기화' value='초기화'></div></th>
                                 <th class='large'>
                                 <span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">곡  명</span></th>
                                 <th>주소값</th>
