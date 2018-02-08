@@ -2,7 +2,11 @@
 
 include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 
-//$result = mysqli_query($connect,"select song_no from info;");
+if(isset($result)){
+}
+else{
+  $result = mysqli_query($connect,"select song_no from info;");
+}
 
 
 $total = mysqli_num_rows($result);
