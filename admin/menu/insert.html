@@ -9,6 +9,8 @@
     }
     body{
       background-color:#819FF7;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
     }
       
     .headline{
@@ -20,8 +22,6 @@
     border: #000000 solid 1px;
     padding: 10px;
     background-color: #ffffff;
-    width: 50px;  
-    height: 50px;
     }
 
     .button:hover {
@@ -30,15 +30,21 @@
     }
       
     .form_insert{
-      
+      background-color: #000000;
+      border: 1;
     }
       
     #button_back{
-      color: #000007;
+      color: #ffffff;
       height: 50px;
       width: 50px;
     }
       
+    #button_back:hover{
+      color: #000000;
+      height: 50px;
+      width: 50px;
+    }      
     </style>
   </head>
   <body>
@@ -69,7 +75,7 @@
                         ?>
                         </select>
     <br>
-    <input type="submit" value="DB로 전송" onclick="validcheck();">
+    <input class="button" id="button_submit" type="submit" value="DB로 전송" onclick="validcheck();">
     </form>
     </div>
     <?php
