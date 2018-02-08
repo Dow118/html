@@ -2,11 +2,11 @@
 
 include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 
-if(isset($result)){
-  $page_result = $result;
+if(!$_GET['filter']){
+  $page_result = mysqli_query($connect,"select song_no from info;");
 }
 else{
-  $page_result = mysqli_query($connect,"select song_no from info;");
+  $page_result = $result;
 }
 
 
