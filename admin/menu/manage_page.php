@@ -56,9 +56,9 @@
                                 <span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>";
         
                         $result = mysqli_query($connect, "select distinct song_artist from info");
-                        echo "<input type='hidden' id='filter_artist' name='filterByArtist' value='null'>";
+        
                         while($row=mysqli_fetch_row($result)){
-                            echo "<input class='optionbutton' type='submit' value='$row[0]' onclick=\"filter($row[0]);\"><br>";           
+                            echo "<input class='optionbutton' type='submit' name='filterByArtist' value='$row[0]'\"><br>";           
                         }           
                         echo "<input class='optionbutton' type='submit' value='초기화'></div></th>
                                 <th class='large'>
