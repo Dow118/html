@@ -68,6 +68,7 @@
                                 <span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>";
         
                         $result = mysqli_query($connect, "select distinct song_category from info");
+                        $filter = mysqli_num_rows($result);
         
                         while($row=mysqli_fetch_row($result)){
                             echo "<input class='optionbutton' type='submit' name='filterByCategory' value='$row[0]'><br>";
@@ -76,7 +77,7 @@
                                 <th><span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_date&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">등록일자</span>
                                 <span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>
                                 
-                                <input type='hidden' name='filter' value='true'>
+                                <input type='hidden' name='filter' value='$filter'>
                                 <input type='date' name='filterByDate_start' value='$filter_startdate'>
                                 <input type='date' name='filterByDate_finish' value='$filter_finishdate'>
                                 <input type='submit' value='입력'></div></form></th></tr>";
@@ -96,7 +97,7 @@
                         }
                         else $query3 = " ";
         
-                        $query4 = "order by $sortBy $order limit $page_num,$data_num";
+                        $query4 = "order by $sortBy $order limit $page_num,$data_num;";
                         $query_result = $query.$query2.$query3.$query4;
         
                         $result = mysqli_query($connect, $query_result);
