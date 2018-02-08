@@ -7,14 +7,30 @@
     form{
       display:inline;
     }
+    body{
+      background-color:#819FF7;
+    }
       
     .headline{
     text-align: center;
     }
     
     .button{
+    color: #000000;
+    border: #000000 solid 1px;
+    padding: 10px;
+    background-color: #ffffff;
     width: 50px;  
     height: 50px;
+    }
+
+    .button:hover {
+    color: #ffffff;
+    background-color: #000000;
+    }
+      
+    .form_insert{
+      
     }
       
     #button_back{
@@ -34,6 +50,7 @@
     session_start();
     if(isset($_SESSION['admin'])){
     ?>
+    <div class="form_insert">
     <form name="insertform" method="post" action="./insert_action.php">
       <label class="headline">아래 양식을 작성해주세요</b></label><br>
     
@@ -54,6 +71,7 @@
     <br>
     <input type="submit" value="DB로 전송" onclick="validcheck();">
     </form>
+    </div>
     <?php
     }
     else{
