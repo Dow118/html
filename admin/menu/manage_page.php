@@ -51,7 +51,7 @@
         
                         echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'>
                                 <form method='get' action='./manage.html'>
-                                <input type='hidden' name='sortBy' value='song_no' style='height: 0px; width: 0px;'><submit class='option' id=$order value='번  호' onclick=\"this.id=(this.id=='asc')?'desc':'asc';\"></th>
+                                <span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">번 호</th>
                                 <th><span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_artist&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">아티스트</span>
                                 <span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>";
         
