@@ -4,13 +4,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 
 if(!$_GET['filter']){
   $page_result = mysqli_query($connect,"select song_no from info;");
+  $total = mysqli_num_rows($page_result);
 }
 else{
-  $page_result = $result;
+  $total = $_GET['filter'];
 }
 
-
-$total = mysqli_num_rows($page_result);
 $i=0;
 
 while($total>-1){
