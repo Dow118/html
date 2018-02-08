@@ -63,7 +63,7 @@ while($total>-1){
 for($j = count($number)-1; $j>-1; $j--){
   $pagenumber = $number[$j] - 1;
   //echo "<a href='./manage.html?page=$pagenumber' class='page'> $number[$j] </a>";
-  echo "<button type='submit' name='page' value='$number[$j]'></form>";
+  echo "<input type='submit' name='page' value='$number[$j]'></form>";
 }
 
   
