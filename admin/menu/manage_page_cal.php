@@ -65,7 +65,7 @@ for($j = count($number)-1; $j>-1; $j--){
   $pagenumber = $number[$j] - 1;
   //echo "<a href='./manage.html?page=$pagenumber' class='page'> $number[$j] </a>";
   //echo "<input type='submit' name='page' value='$number[$j]'></form>";
-  echo "<button type='button' onclick=\"location.href='./manage.html?page=$pagenumber&sortBy=$sortBy&order=$order&filterByArtist=$filter_artist&filterByCategory=$filter_category'\" class='page'> $number[$j] </button>";
+  echo "<button type='button' onclick=\"location.href='./manage.html?page=$pagenumber&sortBy=$sortBy&order=$order&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\" class='page'> $number[$j] </button>";
 }
 
   
