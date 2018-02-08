@@ -3,13 +3,14 @@
 include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 
 if(isset($result)){
+  $page_result = $result;
 }
 else{
-  $result = mysqli_query($connect,"select song_no from info;");
+  $page_result = mysqli_query($connect,"select song_no from info;");
 }
 
 
-$total = mysqli_num_rows($result);
+$total = mysqli_num_rows($page_result);
 $i=0;
 
 while($total>-1){
