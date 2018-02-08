@@ -18,7 +18,7 @@ while($total>-1){
   $i = $i + 1;
 }
 
-
+/*
     if(!$_GET['sortBy']){
         $sortBy = 'song_no';
     }   
@@ -59,11 +59,11 @@ while($total>-1){
     else{
         $filter_finishdate = $_GET['filterByDate_finish'];
     }
-
+*/
 for($j = count($number)-1; $j>-1; $j--){
   $pagenumber = $number[$j] - 1;
   //echo "<a href='./manage.html?page=$pagenumber' class='page'> $number[$j] </a>";
-  echo "<button type='submit' class='page' name='page' value='$number[$j]'></form>";
+  echo "<button type='submit' name='page' value='$number[$j]'></form>";
 }
 
   
