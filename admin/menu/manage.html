@@ -124,5 +124,13 @@
   function filter(filter_artist){
     document.getElementById("filter_artist").value = document.getElementById(filter_artist).value;
   }
+  function isDeleted(){
+    if(confirm('정말 삭제하겠습니까?')){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 </script>
   
