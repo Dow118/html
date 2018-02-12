@@ -7,6 +7,11 @@
     form{
       display:inline;
     }
+    body{
+      background-color:#FAFAFA;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+    }
       
     .body_menu{
     width: 1500px;
@@ -20,23 +25,16 @@
       
     #button_back{
       color: #000007;
-      height: 50px;
-      width: 50px;
     }
     #button_insert{
       color: #0BEA4A;
-      height: 50px;
-      width: 50px;
     }
     #button_modify{
       color: #1B18E6;
-      height: 50px;
-      width: 50px;
     }  
     </style>
     <title>DB Setting</title>
-    <button type="button" onclick="location.href='/index.html'"  class="button" id="button_back"> 메인 </button>
-    <!--<button type="button" onclick="location.href='/admin/menu.html'" class="button" id="button_back"> 관리 </button>-->
+    <img class="button" id="button_back" src="/home.png" onclick="location.href='/index.html'">
   </head>
   <body>
     <?php
@@ -44,19 +42,14 @@
     if(isset($_SESSION['admin'])){
     ?>
     <div class="body_menu">
-    <form action="./menu_action.php" method="post">
-    <input type="hidden" name="menu" value="insert">
-    <input type="submit" value="삽입" class="button" id="button_insert">
-    </form>
-    <form action="./menu_action.php" method="post">
-    <input type="hidden" name="menu" value="modify">
-    <input type="submit" value="관리" class="button" id="button_modify">
+    <img class="button" id="button_insert" src="/insert.png" onclick="location.href='./menu/insert.html'">
+    <img class="button" id="button_modify" src="/modify.png" onclick="location.href='./menu/modify.html'">
     </div>
     <?php
     }
     else{
       echo "<b>관리자로 로그인 해주세요</b>";
-      echo "<button type='button' onclick=\"location.href='/index.html'\"  class='button' id='button_back'> 돌아가기 </button>";
+      echo "<img class="button" id="button_back" src="/back.png" onclick="location.href='./menu/insert.html'">";
      }
     ?>
   </body>
