@@ -6,13 +6,29 @@
     form{
       display:inline;
     }
+    body{
+      background-color:#FAFAFA;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+    }
+    
     .headline{
     text-align: center;
     }
     
     .button{
-    width: 50px;  
+    color: #000000;
+    border: #000000 solid 1px;
+    padding: 10px;
+    background-color: #ffffff;
     height: 50px;
+    width: 50px;
+    }
+    .button:hover {
+    color: #ffffff;
+    background-color: #000000;
+    height: 50px;
+    width: 50px;
     }
       
     #button_back{
@@ -25,8 +41,8 @@
 </head>
 <body>
   <title>DB 수정</title>
-  <button type="button" onclick="location.href='/index.html'"  class="button" id="button_back"> 메인 </button>
-  <button type="button" onclick="location.href='/admin/menu.html'" class="button" id="button_back"> 관리 </button>
+    <img class="button" id="button_back" src="/imgsrc/home.png" onclick="location.href='/index.html'">
+    <img class="button" id="button_back" src="/imgsrc/settings.png" onclick="location.href='/admin/menu.html'">
   <br>
   <?php
     session_start();
@@ -38,7 +54,7 @@
     }
     else{
       echo "<b>관리자로 로그인 해주세요</b>";
-      echo "<button type='button' onclick=\"location.href='/index.html'\"  class='button' id='button_back'> 돌아가기 </button>";
+      echo "<img class='button' id='button_back' src='/imgsrc/back.png' onclick=\"location.href='/main.html'\">";
      }
   ?>
   
