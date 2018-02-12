@@ -31,7 +31,7 @@
     }
       
     .form_insert{
-      background-color: #ffffff;
+      background-color: #000000;
       border: 1 solid #000000;
       height: 100px;
       width: 350px;
@@ -43,13 +43,17 @@
       height: 23px;
       width: 120px;
     }
+    #button_back{
+      height: 50px;
+      width: 100px;
+    }
       
     </style>
   </head>
   <body>
     <title>DB TEST</title>
-    <button type="button" onclick="location.href='/index.html'"  class="button" id="button_back"><img class="button" src="/home.png" ></button>
-    <button type="button" onclick="location.href='/admin/menu.html'" class="button" id="button_back"><img class="button" src="/settings.png"></button>
+    <img class="button" id="button_back" src="/home.png" onclick="location.href='/index.html'">
+    <img class="button" id="button_back" src="/settings.png" onclick="location.href='/admin/menu.html'">
     <br>
     <?php
     session_start();
