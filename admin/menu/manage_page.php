@@ -36,7 +36,7 @@
     }
 
     if(!$_GET['filterByDate_finish']){
-        $filter_finishdate = date("Y-m-d", strtotime(date("Y-m-d"), "+1day"));
+        $filter_finishdate = date("Y-m-d", strtotime(date("Y-m-d")."+1day"));
     }
     else{
         $filter_finishdate = $_GET['filterByDate_finish'];
