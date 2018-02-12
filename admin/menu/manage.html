@@ -3,35 +3,67 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <style>
+    form{
+      display:inline;
+    }
+    body{
+      background-color:#FAFAFA;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+    }
+    
+    .option{
+    CURSOR: hand;
+    }
+    .optionbutton{
+    color: #AFB2F9;
+    vertical-align: left;
+    height: 25px;
+    width: 50px;
+    }
+    .option_hidden{
+    display: none;  
+    }
+    .body_table{
+    width: 1500px;
+    height: 1000px;
+    }   
+    .button{
+    color: #000000;
+    border: #000000 solid 1px;
+    padding: 10px;
+    background-color: #ffffff;
+    height: 50px;
+    width: 50px;
+    }
+    .button:hover {
+    color: #ffffff;
+    background-color: #000000;
+    height: 50px;
+    width: 50px;
+    }
+    
     #button_delete{
       float: right;
       color: #F80505;
-      height: 50px;
-      width: 50px;
     }
     #button_modify{
       float: right;
       color: #0510F4;
-      height: 50px;
-      width: 50px;
     }
     #button_back{
       color: #000000;
-      height: 50px;
-      width: 50px;
     }
-    form{
-      display:inline;
-    }
-table.type03 {
+    
+    table.type03 {
     border-collapse: collapse;
     text-align: center;
     line-height: 1.2;
     border-top: 1px solid #ccc;
     border-left: 3px solid #369;
     margin : 20px 10px;
-}
-table.type03 th {
+    }
+    table.type03 th {
     width: 115px;
     height: 12px;
     padding: 5px;
@@ -40,14 +72,14 @@ table.type03 th {
     color: #AFB2F9;
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-}
-table.type03 th.small {
+    }
+    table.type03 th.small {
     width: 50px;
-}
-table.type03 th.large {
+    }
+    table.type03 th.large {
     width: 200px;
-}
-table.type03 td {
+    } 
+    table.type03 td {
     width: 115px;
     height: 18px;
     padding: 5px;
@@ -55,39 +87,23 @@ table.type03 td {
     vertical-align: center;
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-}
-table.type03 td.small {
+    }
+    table.type03 td.small {
     width: 40px;
-}
-table.type03 td.large {
+    }
+    table.type03 td.large {
     width: 200px;
-}
-table.type03 td.button{
+    }
+    table.type03 td.button{
     width : 30px;  
-}
-.option{
-    CURSOR: hand;
-    
-}
-.optionbutton{
-    color: #AFB2F9;
-    vertical-align: left;
-    height: 25px;
-    width: 50px;
-}
-.option_hidden{
-    display: none;  
-}
-.body_table{
-    width: 1500px;
-    height: 1000px;
-}
+    }
+
   </style>
 </head>
 <body>
   <title>데이터 관리</title>
-  <button type='button' onclick="location.href='/index.html'" id='button_back'> 메인 </button>
-  <button type='button' onclick="location.href='/admin/menu.html'" id='button_back'> 관리 </button>
+    <img class="button" id="button_insert" src="/imgsrc/insert.png" onclick="location.href='./menu/insert.html'">
+    <img class="button" id="button_modify" src="/imgsrc/modify.png" onclick="location.href='./menu/manage.html'">
   <br>
   <div class="body_table">
 <?php
@@ -99,7 +115,7 @@ table.type03 td.button{
     }
     else{
       echo "<b>관리자로 로그인 해주세요</b>";
-      echo "<button type='button' onclick=\"location.href='/index.html'\"  class='button' id='button_back'> 돌아가기 </button>";
+      echo "<img class='button' id='button_back' src='/imgsrc/back.png' onclick=\"location.href='/main.html'\">";
      }
 ?>
   </div>
