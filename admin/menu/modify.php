@@ -21,6 +21,6 @@ include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
                           echo "<option value='$row[0]'> $row[0] </option>";
                           }
  }
- echo "</select><br><input type='submit' value='수정하기'/><br>";
+ echo "</select><br><input type='submit' class='button' id='submitbutton' value='수정하기'/><br>";
  echo "</form>";
 ?>
