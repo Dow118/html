@@ -40,7 +40,7 @@
         for($i = 0; $i < count($data); $i++){
             if($data[$i]['name'] == $temp['name']) continue;
             echo "<div class='wrap'>";
-            echo "<div class='image'><a href='./main.html?id=".$data[$arr[$i]]['no']."'>";
+            echo "<div class='image'><a href='./main.html?id=".$data[$i]['no']."'>";
             echo "<img src='https://img.youtube.com/vi/".$data[$i]['url']."/default.jpg' class='img' name='".$data[$i]['name']."'></a></div>";
             echo "<div class='text'><a href='./main.html?id=".$data[$i]['no']."'>".$data[$i]['artist']." - ".$data[$i]['name']."</a>";
             echo "<hr size='1'>";
