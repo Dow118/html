@@ -104,7 +104,7 @@
                         $result = mysqli_query($connect, $query_result);
         
                           while($row=mysqli_fetch_row($result)){
-                          echo "<form method='POST' action = './delete_action.php'>";
+                          echo "<form method='POST' action = './delete_action.php' onsubmit='return isDeleted()'>";
                           echo "<input type='hidden' name='key' value='$row[0]'/>";  
                           echo "<tr><td class='small'>$row[0] </td><td> $row[1] </td><td class='large'> $row[2] </td><td> $row[3] </td><td class='small'> $row[4] </td><td> $row[5] </td>";
                           echo "<td><input type='image' value='delete'  class='button' id='action_delete' src='/imgsrc/delete.png'></td>";
