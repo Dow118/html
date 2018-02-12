@@ -107,11 +107,11 @@
                           echo "<form method='POST' action = './delete_action.php'>";
                           echo "<input type='hidden' name='key' value='$row[0]'/>";  
                           echo "<tr><td class='small'>$row[0] </td><td> $row[1] </td><td class='large'> $row[2] </td><td> $row[3] </td><td class='small'> $row[4] </td><td> $row[5] </td>";
-                          echo "<td class='button'><input type='submit' value='delete' id='button_delete'></td>";
+                          echo "<td><input type='submit' value='delete'  class='button' id='button_delete'></td>";
                           echo "</form>";
                           echo "<form method='POST' action = './modify.html'>";
                           echo "<input type='hidden' name='key' value='$row[0]'>";
-                          echo "<td class='button'><input type='submit' value='modify' id='button_modify'/></td>";
+                          echo "<td><input type='submit' value='modify'  class='button' id='button_modify'/></td>";
                           echo "</form></tr>";
                           }
                         echo "</table>";
