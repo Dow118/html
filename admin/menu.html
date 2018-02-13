@@ -47,7 +47,7 @@
     }
 
     .arrow_box:after {
-    position: fixed;
+    position: absolute;
     text-align: center;
     font-size: 12px;
     width: 0;
@@ -87,7 +87,7 @@
 </html>
 
 <script>
-var arrowbox = document.getElementByClassName('button');
+var arrowbox = document.getElementById('button_back');
 
 window.onmousemove = function (e) {
     var x = e.clientX;
