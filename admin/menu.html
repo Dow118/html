@@ -38,7 +38,6 @@
       
     .arrow_box {
     display: none;
-    position: absolute;
     padding: 5px;
     text-align: center;
     font-size: 12px;
@@ -48,7 +47,7 @@
     }
 
     .arrow_box:after {
-    position: absolute;
+    position: fixed;
     text-align: center;
     font-size: 12px;
     width: 0;
@@ -86,3 +85,14 @@
   </body>
 
 </html>
+
+<script>
+var arrowbox = document.getElementByClassName('button');
+
+window.onmousemove = function (e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    arrowbox.style.top = (y + 20) + 'px';
+    arrowbox.style.left = (x + 20) + 'px';
+};
+</script>
