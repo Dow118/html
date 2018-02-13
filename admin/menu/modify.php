@@ -21,7 +21,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
                           echo "<option value='$row[0]'> $row[0] </option>";
                           }
  }
- echo "</select><br><input type='submit' class='button' id='submitbutton' value='수정하기'/><br>";
- echo "<p class='arrow_box' id='modify_box'>작성된 내용으로 수정</p>";
+ echo "</select><br><input type='submit' class='button' id='submitbutton' value='수정하기' onmousemove='arrowbox_move(3)' /><br>";
+ echo "<p class='arrow_box' id='3'>작성된 내용으로 수정</p>";
  echo "</form>";
 ?>
