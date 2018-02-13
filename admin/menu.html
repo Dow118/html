@@ -74,12 +74,12 @@
     session_start();
     if(isset($_SESSION['admin'])){
     ?>
-    <div class="body_menu">
+    
     <img class="button" id="button_insert" src="/imgsrc/insert.png" onmousemove="arrowbox_move()" onclick="location.href='./menu/insert.html'">
     <p class="arrow_box" id="arrow">새로운 곡 추가</p>
     <img class="button" id="button_modify" src="/imgsrc/modify.png" onmousemove="arrowbox_move()" onclick="location.href='./menu/manage.html'">
     <p class="arrow_box" id="arrow">곡 목록 보기</p>
-    </div>
+    
     <?php
     }
     else{
