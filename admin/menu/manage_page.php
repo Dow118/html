@@ -102,17 +102,23 @@
                         $query_result = $query.$query2.$query3.$query4;
         
                         $result = mysqli_query($connect, $query_result);
+                            
+                        
+                        $delete_number = 5;     
+                        $modify_number = 6;
         
                           while($row=mysqli_fetch_row($result)){
                           echo "<form method='POST' action = './delete_action.php' onsubmit='return isDeleted()'>";
                           echo "<input type='hidden' name='key' value='$row[0]'>";  
                           echo "<tr><td class='small'>$row[0] </td><td> $row[1] </td><td class='large'> $row[2] </td><td> $row[3] </td><td class='small'> $row[4] </td><td> $row[5] </td>";
-                          echo "<td class='small'><input type='image' value='delete' class='button' id='action_delete' src='/imgsrc/delete.png' onmousemove='arrowbox_move(5)' ><p class='arrow_box' id='5'>곡을 삭제합니다</p></td>";
+                          echo "<td class='small'><input type='image' value='delete' class='button' id='action_delete' src='/imgsrc/delete.png' onmousemove='arrowbox_move($delete_number)' ><p class='arrow_box' id=$delete_number>곡을 삭제합니다</p></td>";
                           echo "</form>";
                           echo "<form method='POST' action = './modify.html'>";
                           echo "<input type='hidden' name='key' value='$row[0]'>";
-                          echo "<td class='small'><input type='image' value='modify' class='button' id='action_modify' src='/imgsrc/edit.png' onmousemove='arrowbox_move(6)' ><p class='arrow_box' id='6'>정보를 수정합니다</p></td>";
+                          echo "<td class='small'><input type='image' value='modify' class='button' id='action_modify' src='/imgsrc/edit.png' onmousemove='arrowbox_move($modify_number)' ><p class='arrow_box' id='$modify_number'>정보를 수정합니다</p></td>";
                           echo "</form></tr>";
+                          $delete_number = $delete_number+2;     
+                          $modify_number = $modify_number+2;
                           }
                         echo "</table>";
     }
