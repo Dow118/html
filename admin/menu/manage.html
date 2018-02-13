@@ -30,16 +30,13 @@
     }
     
     .button{
-    color: #000000;
     border: #000000 solid 1px;
     padding: 10px;
-    background-color: #ffffff;
     height: 50px;
     width: 50px;
     }
     .button:hover{
-    color: #ffffff;
-    background-color: #000000;
+    filter: invert();
     height: 50px;
     width: 50px;
     }
@@ -131,10 +128,14 @@
 </head>
 <body>
   <title>데이터 관리</title>
-    <img class="button" id="button_insert" src="/imgsrc/insert.png" onclick="location.href='/admin/menu/insert.html'">
+    <img class="button" id="button_back" src="/imgsrc/home.png" onclick="location.href='/index.html'">
     <p class="arrow_box" id="back_box">첫 화면으로</p>
+    <img class="button" id="button_back" src="/imgsrc/settings.png" onclick="location.href='/admin/menu.html'">
+    <p class="arrow_box" id="setting_box">관리화면으로</p>
+    <img class="button" id="button_insert" src="/imgsrc/insert.png" onclick="location.href='/admin/menu/insert.html'">
+    <p class="arrow_box" id="insert_box">새로운 곡 추가</p>
     <img class="button" id="button_modify" src="/imgsrc/modify.png" onclick="location.href='/admin/menu/manage.html'">
-    <p class="arrow_box" id="admin_box">관리화면으로</p>
+    <p class="arrow_box" id="modify_box">곡 목록 보기</p>
   <br>
   <div class="body_table">
 <?php
