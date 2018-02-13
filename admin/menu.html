@@ -69,7 +69,7 @@
     <img class="button" id="button_back" src="/imgsrc/home.png" onclick="location.href='/index.html'">
     <p class="arrow_box" id="back_box">첫 화면으로</p>
   </head>
-  <body onload="Loaded()">
+  <body>
     <?php
     session_start();
     if(isset($_SESSION['admin'])){
@@ -92,19 +92,9 @@
 </html>
 
 <script>
-function Move(e) {
-    document.layers['arrow_box'].left=e.pageX;
-    document.layers['arrow_box'].top=e.pageY;
-}
 function arrowbox_move(){
-    document.all["arrow_box"].style.left=event.clientX;
-    document.all["arrow_box"].style.top=event.clientY;
-}
-function Loaded() {
-    if (document.layers) {
-         window.captureEvents(Event.MOUSEMOVE);
-         window.onmousemove=Move;
-    }
+    document.getElementByClassName("arrow_box").style.left = event.clientX;
+    document.getElementByClassName("arrow_box").style.top = event.clientY;
 }
 
 </script>
