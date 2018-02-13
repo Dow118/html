@@ -42,6 +42,32 @@
       height: 23px;
       width: 120px;
     }
+    .arrow_box {
+    display: none;
+    position: absolute;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;  
+    border-radius: 7px;
+    background: #333;
+    color: #fff;
+    }
+    .arrow_box:after {
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    border-color: rgba(51, 51, 51, 0);
+    border-bottom-color: #333;
+    border-width: 9px;
+    pointer-events: none;
+    content: " ";
+    } 
+      
     #button_submit{
       height: 50px;
       width: 100px;
@@ -52,7 +78,9 @@
   <body>
     <title>DB TEST</title>
     <img class="button" id="button_back" src="/imgsrc/home.png" onclick="location.href='/index.html'">
+    <p class="arrow_box" id="back_box">첫 화면으로</p>
     <img class="button" id="button_back" src="/imgsrc/settings.png" onclick="location.href='/admin/menu.html'">
+    <p class="arrow_box" id="admin_box">관리화면으로</p>
     <br>
     <?php
     session_start();
@@ -78,6 +106,7 @@
     </div>
     <br>
     <input class="button" id="button_submit" type="submit" value="곡 추가하기" onclick="validcheck();">
+    <p class="arrow_box" id="admin_box">곡이 추가됩니다</p>
     </form>
     
     <?php
