@@ -30,36 +30,38 @@
     }
     
     .button{
-    border: #000000 solid 1px;
+    border: #000000 solid 3px;
     padding: 10px;
     height: 50px;
     width: 50px;
     }
     .button:hover{
-    filter: invert();
-    height: 50px;
-    width: 50px;
+    border: #000000 dotted 3px;
+    filter: invert(65%);
     }
+      
     .button:hover + p.arrow_box{
     display: block;
     height: 13px;
     width: 110px;
     }
-    
+      
     .arrow_box {
-    display: none;
     position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
     padding: 5px;
     text-align: center;
     font-size: 12px;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;  
     border-radius: 7px;
     background: #333;
     color: #fff;
     }
     .arrow_box:after {
     position: absolute;
+    top: 0;
+    left: 0;
     text-align: center;
     font-size: 12px;
     width: 0;
@@ -128,14 +130,14 @@
 </head>
 <body>
   <title>데이터 관리</title>
-    <img class="button" id="button_back" src="/imgsrc/home.png" onclick="location.href='/index.html'">
-    <p class="arrow_box" id="back_box">첫 화면으로</p>
-    <img class="button" id="button_back" src="/imgsrc/settings.png" onclick="location.href='/admin/menu.html'">
-    <p class="arrow_box" id="setting_box">관리화면으로</p>
-    <img class="button" id="button_insert" src="/imgsrc/insert.png" onclick="location.href='/admin/menu/insert.html'">
-    <p class="arrow_box" id="insert_box">새로운 곡 추가</p>
-    <img class="button" id="button_modify" src="/imgsrc/modify.png" onclick="location.href='/admin/menu/manage.html'">
-    <p class="arrow_box" id="modify_box">곡 목록 보기</p>
+    <img class="button" id="button_back" src="/imgsrc/home.png" onmousemove="arrowbox_move(1)" onclick="location.href='/index.html'">
+    <p class="arrow_box" id="1">첫 화면으로</p>
+    <img class="button" id="button_back" src="/imgsrc/settings.png" onmousemove="arrowbox_move(2)" onclick="location.href='/admin/menu.html'">
+    <p class="arrow_box" id="2">관리화면으로</p>
+    <img class="button" id="button_insert" src="/imgsrc/insert.png" onmousemove="arrowbox_move(3)" onclick="location.href='/admin/menu/insert.html'">
+    <p class="arrow_box" id="3">새로운 곡 추가</p>
+    <img class="button" id="button_modify" src="/imgsrc/modify.png" onmousemove="arrowbox_move(4)" onclick="location.href='/admin/menu/manage.html'">
+    <p class="arrow_box" id="4">곡 목록 보기</p>
   <br>
   <div class="body_table">
 <?php
@@ -168,5 +170,9 @@
       return false;
     }
   }
+  function arrowbox_move(number){
+    document.getElementById(number).style.left = event.clientX;
+    document.getElementById(number).style.top = event.clientY;
+}
 </script>
   
