@@ -27,7 +27,8 @@
     .body_table{
     width: 1000px;
     height: 1000px;
-    }   
+    }
+    
     .button{
     color: #000000;
     border: #000000 solid 1px;
@@ -36,11 +37,42 @@
     height: 50px;
     width: 50px;
     }
-    .button:hover {
+    .button:hover{
     color: #ffffff;
     background-color: #000000;
     height: 50px;
     width: 50px;
+    }
+    .button:hover + p.arrow_box{
+    display: block;
+    height: 13px;
+    width: 110px;
+    }
+    
+    .arrow_box {
+    display: none;
+    position: absolute;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;  
+    border-radius: 7px;
+    background: #333;
+    color: #fff;
+    }
+    .arrow_box:after {
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    border-color: rgba(51, 51, 51, 0);
+    border-bottom-color: #333;
+    border-width: 9px;
+    pointer-events: none;
+    content: " ";
     }
     
     #action_delete{
@@ -100,7 +132,9 @@
 <body>
   <title>데이터 관리</title>
     <img class="button" id="button_insert" src="/imgsrc/insert.png" onclick="location.href='/admin/menu/insert.html'">
+    <p class="arrow_box" id="back_box">첫 화면으로</p>
     <img class="button" id="button_modify" src="/imgsrc/modify.png" onclick="location.href='/admin/menu/manage.html'">
+    <p class="arrow_box" id="admin_box">관리화면으로</p>
   <br>
   <div class="body_table">
 <?php
@@ -113,6 +147,7 @@
     else{
       echo "<b>관리자로 로그인 해주세요</b>";
       echo "<img class='button' id='button_back' src='/imgsrc/back.png' onclick=\"location.href='/main.html'\">";
+      echo "<p class='arrow_box' id='back_box'>돌아갑니다</p>";
      }
 ?>
   </div>
