@@ -48,7 +48,9 @@
     }
 
     .arrow_box:after {
-    position: absolute;
+    position: fixed;
+    top: --mouse-y;
+    left: --mouse-x;
     text-align: center;
     font-size: 12px;
     width: 0;
@@ -88,12 +90,15 @@
 </html>
 
 <script>
+var button = document.getElementByClassName('button');
 var arrowbox = document.getElementByClassName('arrow_box');
+  
+document.addEventListener('mousemove', evt => {
+    let x = evt.clientX / innerWidth;
+    let y = evt.clientY / innerHeight;
+ 
+    arrowbox.style.setProperty('--mouse-x', x);
+    arrowbox.style.setProperty('--mouse-y', y);
+});
 
-window.onmousemove = function (e) {
-    var x = e.clientX;
-    var y = e.clientY;
-    arrowbox.style.top = (y + 20) + 'px';
-    arrowbox.style.left = (x + 20) + 'px';
-};
 </script>
