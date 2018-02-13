@@ -115,7 +115,7 @@
                           echo "</form>";
                           echo "<form method='POST' action = './modify.html'>";
                           echo "<input type='hidden' name='key' value='$row[0]'>";
-                          echo "<td class='small'><input type='image' value='modify' class='button' id='action_modify' src='/imgsrc/edit.png' onmousemove='arrowbox_move($modify_number)' ><p class='arrow_box' id='$modify_number'>정보를 수정합니다</p></td>";
+                          echo "<td class='small'><input type='image' value='modify' class='button' id='action_modify' src='/imgsrc/edit.png' onmousemove='arrowbox_move($modify_number)' ><p class='arrow_box' id=$modify_number>정보를 수정합니다</p></td>";
                           echo "</form></tr>";
                           $delete_number = $delete_number+2;     
                           $modify_number = $modify_number+2;
