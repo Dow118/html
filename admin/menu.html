@@ -38,8 +38,8 @@
       
     .arrow_box {
     position: absolute;
-    top: --mouse-y;
-    left: --mouse-x;
+    top: 0;
+    left: 0;
     display: none;
     padding: 5px;
     text-align: center;
@@ -93,17 +93,17 @@
 
 <script>
 function Move(e) {
-    document.layers['Menu'].left=e.pageX
-    document.layers['Menu'].top=e.pageY
+    document.layers['Menu'].left=e.pageX;
+    document.layers['Menu'].top=e.pageY;
 }
 function arrowbox_move(){
-    document.all["arrow_box"].style.left=event.clientX
-    document.all["arrow_box"].style.top=event.clientY
+    document.all["arrow_box"].style.left=event.clientX;
+    document.all["arrow_box"].style.top=event.clientY;
 }
 function Loaded() {
     if (document.layers) {
-         window.captureEvents(Event.MOUSEMOVE)
-         window.onmousemove=Move
+         window.captureEvents(Event.MOUSEMOVE);
+         window.onmousemove=Move;
     }
 }
 
