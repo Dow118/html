@@ -38,6 +38,8 @@
       
     .arrow_box {
     position: absolute;
+    top: --mouse-y;
+    left: --mouse-x;
     display: none;
     padding: 5px;
     text-align: center;
@@ -49,8 +51,8 @@
 
     .arrow_box:after {
     position: absolute;
-    top: --mouse-y;
-    left: --mouse-x;
+    top: 0;
+    left: 0;
     text-align: center;
     font-size: 12px;
     width: 0;
@@ -67,13 +69,13 @@
     <img class="button" id="button_back" src="/imgsrc/home.png" onclick="location.href='/index.html'">
     <p class="arrow_box" id="back_box">첫 화면으로</p>
   </head>
-  <body>
+  <body onload="Loaded()">
     <?php
     session_start();
     if(isset($_SESSION['admin'])){
     ?>
     <div class="body_menu">
-    <img class="button" id="button_insert" src="/imgsrc/insert.png" onclick="location.href='./menu/insert.html'">
+    <img class="button" id="button_insert" src="/imgsrc/insert.png" onmousemove="arrowbox_move()" onclick="location.href='./menu/insert.html'">
     <p class="arrow_box" id="insert_box">새로운 곡 추가</p>
     <img class="button" id="button_modify" src="/imgsrc/modify.png" onclick="location.href='./menu/manage.html'">
     <p class="arrow_box" id="modify_box">곡 목록 보기</p>
@@ -90,15 +92,19 @@
 </html>
 
 <script>
-var button = document.getElementByClassName('button');
-var arrowbox = document.getElementByClassName('arrow_box');
-  
-document.addEventListener('mousemove', evt => {
-    let x = evt.clientX / innerWidth;
-    let y = evt.clientY / innerHeight;
- 
-    arrowbox.style.setProperty('--mouse-x', x);
-    arrowbox.style.setProperty('--mouse-y', y);
-});
+function Move(e) {
+    document.layers['Menu'].left=e.pageX
+    document.layers['Menu'].top=e.pageY
+}
+function arrowbox_move(){
+    document.all["arrow_box"].style.left=event.clientX
+    document.all["arrow_box"].style.top=event.clientY
+}
+function Loaded() {
+    if (document.layers) {
+         window.captureEvents(Event.MOUSEMOVE)
+         window.onmousemove=Move
+    }
+}
 
 </script>
