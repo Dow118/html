@@ -107,11 +107,11 @@
                           echo "<form method='POST' action = './delete_action.php' onsubmit='return isDeleted()'>";
                           echo "<input type='hidden' name='key' value='$row[0]'>";  
                           echo "<tr><td class='small'>$row[0] </td><td> $row[1] </td><td class='large'> $row[2] </td><td> $row[3] </td><td class='small'> $row[4] </td><td> $row[5] </td>";
-                          echo "<td class='small'><input type='image' value='delete' class='button' id='action_delete' src='/imgsrc/delete.png'><p class='arrow_box' id='delete_box'>곡을 삭제합니다</p></td>";
+                          echo "<td class='small'><input type='image' value='delete' class='button' id='action_delete' src='/imgsrc/delete.png' onmousemove='arrowbox_move(5)' ><p class='arrow_box' id='6'>곡을 삭제합니다</p></td>";
                           echo "</form>";
                           echo "<form method='POST' action = './modify.html'>";
                           echo "<input type='hidden' name='key' value='$row[0]'>";
-                          echo "<td class='small'><input type='image' value='modify' class='button' id='action_modify' src='/imgsrc/edit.png'><p class='arrow_box' id='modify_box'>정보를 수정합니다</p></td>";
+                          echo "<td class='small'><input type='image' value='modify' class='button' id='action_modify' src='/imgsrc/edit.png' onmousemove='arrowbox_move(5)' ><p class='arrow_box' id='5'>정보를 수정합니다</p></td>";
                           echo "</form></tr>";
                           }
                         echo "</table>";
