@@ -30,7 +30,39 @@
     height: 50px;
     width: 50px;
     }
+
+    .button:hover + p.arrow_box{
+    display: block;
+    height: 13px;
+    width: 110px;
+    }
       
+    .arrow_box {
+    display: none;
+    position: absolute;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;  
+    border-radius: 7px;
+    background: #333;
+    color: #fff;
+    }
+    .arrow_box:after {
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    border-color: rgba(51, 51, 51, 0);
+    border-bottom-color: #333;
+    border-width: 9px;
+    pointer-events: none;
+    content: " ";
+    }
+    
     #button_back{
       color: #000007;
     }
@@ -44,7 +76,9 @@
 <body>
   <title>DB 수정</title>
     <img class="button" id="button_back" src="/imgsrc/home.png" onclick="location.href='/index.html'">
+    <p class="arrow_box" id="back_box">첫 화면으로</p>
     <img class="button" id="button_back" src="/imgsrc/settings.png" onclick="location.href='/admin/menu.html'">
+    <p class="arrow_box" id="admin_box">관리 화면으로</p>
   <br>
   <?php
     session_start();
@@ -56,7 +90,8 @@
     }
     else{
       echo "<b>관리자로 로그인 해주세요</b>";
-      echo "<img class='button' id='button_back' src='/imgsrc/back.png' onclick=\"location.href='/main.html'\">";
+      echo "<img class='button' id='button_back' src='/imgsrc/back.png' onclick=\"location.href='/main.html'\">";  
+      echo "<p class='arrow_box' id='back_box'>첫 화면으로</p>";
      }
   ?>
   
