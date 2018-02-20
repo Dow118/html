@@ -55,9 +55,9 @@
                                 <th><span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_artist&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">아티스트</span>
                                 <span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>";
         
-                        $result = mysqli_query($connect, "select distinct song_artist from info");
+                        $result_01 = mysqli_query($connect, "select distinct song_artist from info");
         
-                        while($row=mysqli_fetch_row($result)){
+                        while($row=mysqli_fetch_row($result_01)){
                             echo "<input class='optionbutton' type='submit' name='filterByArtist' value='$row[0]'><br>";           
                         }           
                         echo "<input class='optionbutton' type='submit' name='filterByArtist' value='null'></div></th>
@@ -67,9 +67,9 @@
                                 <th><span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_category&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">장 르</span>
                                 <span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>";
         
-                        $result = mysqli_query($connect, "select distinct song_category from info");
+                        $result_02 = mysqli_query($connect, "select distinct song_category from info");
         
-                        while($row=mysqli_fetch_row($result)){
+                        while($row=mysqli_fetch_row($result_02)){
                             echo "<input class='optionbutton' type='submit' name='filterByCategory' value='$row[0]'><br>";
                         }    
                         echo "<input class='optionbutton' type='submit' name='filterByCategory' value='null' ></div></th>
@@ -96,8 +96,8 @@
                         $query4 = "order by $sortBy $order limit $page_num,$data_num;";
                         $query_result = $query.$query2.$query3.$query4;
         
-                        $result = mysqli_query($connect, $query_result);
-                        $filter = mysqli_num_rows($result);
+                        $result_03 = mysqli_query($connect, $query_result);
+                        $filter = mysqli_num_rows($result_03);
 
                         echo "  <input type='hidden' name='filter' value='$filter'>
                                 <input type='date' name='filterByDate_start' value='$filter_startdate'>
@@ -107,7 +107,7 @@
                         $delete_number = 5;     
                         $modify_number = 6;
         
-                          while($row=mysqli_fetch_row($result)){
+                          while($row=mysqli_fetch_row($result_03)){
                           echo "<form method='POST' action = './delete_action.php' onsubmit='return isDeleted()'>";
                           echo "<input type='hidden' name='key' value='$row[0]'>";  
                           echo "<tr><td class='small'>$row[0] </td><td> $row[1] </td><td class='large'> $row[2] </td><td> $row[3] </td><td class='small'> $row[4] </td><td> $row[5] </td>";
