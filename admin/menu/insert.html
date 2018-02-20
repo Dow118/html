@@ -44,7 +44,7 @@
     if(isset($_SESSION['admin'])){
     ?>
     <div class="form_insert">
-    <form name="insertform" method="post" action="./insert_action.php">
+    <form name="insertform" method="post" action="./insert_action.php" onsubmit='return validcheck()'>
     
       <label size>곡&emsp;&emsp;&emsp;명 : </label><input type="text" name="song_name" class="box"><br>
       <label size>아 티 스 트 : </label><input type="text" name="song_artist" class="box"><br>
