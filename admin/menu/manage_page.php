@@ -98,7 +98,7 @@
                         $query_result = $query.$query2.$query3.$query4;
         
                         $result_03 = mysqli_query($connect, $query_result);
-                        $filter = mysqli_num_rows($result_03
+                        $filter = mysqli_num_rows($result_03);
 
                         echo "  <input type='hidden' name='filter' value='$filter'>
                                 <input type='date' name='filterByDate_start' value='$filter_startdate'>
