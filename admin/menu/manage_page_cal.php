@@ -5,7 +5,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 if(!$_GET['filter']){
   $page_result = mysqli_query($connect,"select song_no from info;");
   $filter = mysqli_num_rows($page_result);
-  $total = mysqli_num_rows($page_result);
+  $total = $filter;
 }
 else{
   $filter = $_GET['filter'];
