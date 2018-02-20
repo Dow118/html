@@ -2,15 +2,14 @@
 
 include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 
-if(!$_GET['filter']){
-  $page_result = mysqli_query($connect,"select song_no from info;");
-  $filter = mysqli_num_rows($page_result);
+  if(!$result_04){
+    $filter = mysqli_num_rows(mysqli_query($connect,"select song_no from info;"));
+  }
+  else{
+    $filter = mysqli_num_rows($result_04);
+  }
   $total = $filter;
-}
-else{
-  $filter = $_GET['filter'];
-  $total = $filter;
-}
+
 
 $i=0;
 
@@ -66,7 +65,7 @@ for($j = count($number)-1; $j>-1; $j--){
   $pagenumber = $number[$j] - 1;
   //echo "<a href='./manage.html?page=$pagenumber' class='page'> $number[$j] </a>";
   //echo "<input type='submit' name='page' value='$number[$j]'></form>";
-  echo "<button type='button' onclick=\"location.href='./manage.html?page=$pagenumber&sortBy=$sortBy&order=$order&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate&filter=$filter'\" class='page'> $number[$j] </button>";
+  echo "<button type='button' onclick=\"location.href='./manage.html?page=$pagenumber&sortBy=$sortBy&order=$order&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\" class='page'> $number[$j] </button>";
 }
 
   
