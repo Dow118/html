@@ -94,10 +94,13 @@
                         else $query3 = " ";
         
                         $query4 = "order by $sortBy $order limit $page_num,$data_num;";
+        
                         $query_result = $query.$query2.$query3.$query4;
+                        $filter_result = $query.$query2.$query3.";";
         
                         $result_03 = mysqli_query($connect, $query_result);
-                        $filter = mysqli_num_rows($query.$query2.$query3);
+                        $result_04 = mysqli_query($connect, $filter_result);
+                        $filter = mysqli_num_rows($result_04);
 
                         echo "  <input type='hidden' name='filter' value='$filter'>
                                 <input type='date' name='filterByDate_start' value='$filter_startdate'>
