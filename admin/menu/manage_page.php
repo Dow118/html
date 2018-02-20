@@ -68,7 +68,6 @@
                                 <span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>";
         
                         $result = mysqli_query($connect, "select distinct song_category from info");
-                        $filter = mysqli_num_rows($result);
         
                         while($row=mysqli_fetch_row($result)){
                             echo "<input class='optionbutton' type='submit' name='filterByCategory' value='$row[0]'><br>";
@@ -102,7 +101,7 @@
                         $query_result = $query.$query2.$query3.$query4;
         
                         $result = mysqli_query($connect, $query_result);
-                            
+                        $filter = mysqli_num_rows($result);
                         
                         $delete_number = 5;     
                         $modify_number = 6;
