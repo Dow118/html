@@ -57,8 +57,8 @@
         
                         $result_01 = mysqli_query($connect, "select distinct song_artist from info");
         
-                        while($row=mysqli_fetch_row($result_01)){
-                            echo "<input class='optionbutton' type='submit' name='filterByArtist' value='$row[0]'><br>";           
+                        while($row_01=mysqli_fetch_row($result_01)){
+                            echo "<input class='optionbutton' type='submit' name='filterByArtist' value='$row_01[0]'><br>";           
                         }           
                         echo "<input class='optionbutton' type='submit' name='filterByArtist' value='null'></div></th>
                                 <th class='large'>
@@ -69,8 +69,8 @@
         
                         $result_02 = mysqli_query($connect, "select distinct song_category from info");
         
-                        while($row=mysqli_fetch_row($result_02)){
-                            echo "<input class='optionbutton' type='submit' name='filterByCategory' value='$row[0]'><br>";
+                        while($row_02=mysqli_fetch_row($result_02)){
+                            echo "<input class='optionbutton' type='submit' name='filterByCategory' value='$row_02[0]'><br>";
                         }    
                         echo "<input class='optionbutton' type='submit' name='filterByCategory' value='null' ></div></th>
                                 <th><span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_date&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">등록일자</span>
