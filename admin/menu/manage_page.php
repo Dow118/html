@@ -50,7 +50,6 @@
                         $data_num = 20;
         
                         echo "<table class='type03' style='table-layout:fixed'><tr><th class='small'>
-                                <form method='get' action='./manage.html'>
                                 <span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">번 호</th>
                                 <th><span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_artist&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">아티스트</span>
                                 <span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>";
@@ -58,9 +57,9 @@
                         $result_01 = mysqli_query($connect, "select distinct song_artist from info");
         
                         while($row_01=mysqli_fetch_row($result_01)){
-                            echo "<input class='optionbutton' type='submit' name='filterByArtist' value='$row_01[0]'><br>";           
+                            echo "<form method='get' action='./manage.html'><input type='hidden' name='filterByCategory' value='$filter_category'><input class='optionbutton' type='submit' name='filterByArtist' value='$row_01[0]'></form><br>";           
                         }           
-                        echo "<input class='optionbutton' type='submit' name='filterByArtist' value='null'></div></th>
+                        echo "<form method='get' action='./manage.html'><input type='hidden' name='filterByCategory' value='$filter_category'><input class='optionbutton' type='submit' name='filterByArtist' value='null'></form></div></th>
                                 <th class='large'>
                                 <span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">곡  명</span></th>
                                 <th>주소값</th>
@@ -70,12 +69,12 @@
                         $result_02 = mysqli_query($connect, "select distinct song_category from info");
         
                         while($row_02=mysqli_fetch_row($result_02)){
-                            echo "<input class='optionbutton' type='submit' name='filterByCategory' value='$row_02[0]'><br>";
+                            echo "<form method='get' action='./manage.html'><input type='hidden' name='filterByArtist' value='$filter_artist'><input class='optionbutton' type='submit' name='filterByCategory' value='$row_02[0]'></form><br>";
                         }    
-                        echo "<input class='optionbutton' type='submit' name='filterByCategory' value='null' ></div></th>
+                        echo "<form method='get' action='./manage.html'><input type='hidden' name='filterByArtist' value='$filter_artist'><input class='optionbutton' type='submit' name='filterByCategory' value='null' ></form></div></th>
                                 <th><span class='option' id=$order onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_date&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">등록일자</span>
                                 <span class='option' onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><div class='option_hidden'>
-                                
+                                <form method='get' action='./manage.html'>
                                 <input type='hidden' name='page' value='0'>";
                         
                         $query = "select * from info";
@@ -101,8 +100,8 @@
                         $result_03 = mysqli_query($connect, $query_result);
                         $result_04 = mysqli_query($connect, $page_result);
 
-                        //<input type='hidden' name='filter' value='$filter'>
-                        echo "  
+                        echo "  <input type='hidden' name='filterByArtist' value='$filter_artist'>
+                                <input type='hidden' name='filterByCategory' value='$filter_category'>
                                 <input type='date' name='filterByDate_start' value='$filter_startdate'>
                                 <input type='date' name='filterByDate_finish' value='$filter_finishdate'>
                                 <input type='submit' value='입력'></div></form></th></tr>";
