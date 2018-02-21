@@ -6,12 +6,6 @@
     display: none;  
     }
     
-    .option:hover + p.arrow_box{
-    display: block;
-    height: 13px;
-    width: 110px;
-    }
-
     .optionbutton {
    border: 1px solid #afb1f9;
    background: #ffffff;
