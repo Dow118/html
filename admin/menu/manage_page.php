@@ -126,9 +126,9 @@
 
                         echo "  <input type='hidden' name='filterByArtist' value='$filter_artist'>
                                 <input type='hidden' name='filterByCategory' value='$filter_category'>
-                                <input type='date' name='filterByDate_start' value='$filter_startdate'>
-                                <input type='date' name='filterByDate_finish' value='$filter_finishdate'>
-                                <input type='submit' value='입력'></div></form></th></tr>";
+                                <input type='date' class='optionbutton' name='filterByDate_start' value='$filter_startdate'>
+                                <input type='date' class='optionbutton' name='filterByDate_finish' value='$filter_finishdate'>
+                                <input type='submit' class='optionbutton' value='입력'></div></form></th></tr>";
         
                         $delete_number = 5;     
                         $modify_number = 6;
