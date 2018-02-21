@@ -5,55 +5,54 @@
     .option_hidden{
     display: none;  
     }
-    
-    .optionbutton {
-   border: 0px solid #ffffff;
+
+.optionbutton {
+   border: 1px solid #afb1f9;
    background: #ffffff;
-   background: -webkit-gradient(linear, left top, left bottom, from(#5b80bf), to(#ffffff));
-   background: -webkit-linear-gradient(top, #5b80bf, #ffffff);
-   background: -moz-linear-gradient(top, #5b80bf, #ffffff);
-   background: -ms-linear-gradient(top, #5b80bf, #ffffff);
-   background: -o-linear-gradient(top, #5b80bf, #ffffff);
-   background-image: -ms-linear-gradient(top, #5b80bf 0%, #ffffff 100%);
-   padding: 10px 20px;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+   background: -webkit-linear-gradient(top, #ffffff, #ffffff);
+   background: -moz-linear-gradient(top, #ffffff, #ffffff);
+   background: -ms-linear-gradient(top, #ffffff, #ffffff);
+   background: -o-linear-gradient(top, #ffffff, #ffffff);
+   background-image: -ms-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+   padding: 10.5px 21px;
    -webkit-border-radius: 30px;
    -moz-border-radius: 30px;
    border-radius: 30px;
-   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
-   -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
-   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
-   text-shadow: #5b7fbf 0 1px 0;
-   color: #5b7fbf;
-   font-size: 12px;
-   font-family: helvetica, serif;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   text-shadow: #6600ff 0 1px 0;
+   color: #afb1f9;
+   font-size: 14px;
    text-decoration: none;
-   vertical-align: left;
+   vertical-align: middle;
    height: 25px;
-   width: 100px;
+   width: 75px;
    }
-   
 .optionbutton:hover {
-   border: 0px solid #ffffff;
-   text-shadow: #1e4158 0 1px 0;
-   background: #5b7fbf;
-   background: -webkit-gradient(linear, left top, left bottom, from(#26d1c8), to(#5b7fbf));
-   background: -webkit-linear-gradient(top, #26d1c8, #5b7fbf);
-   background: -moz-linear-gradient(top, #26d1c8, #5b7fbf);
-   background: -ms-linear-gradient(top, #26d1c8, #5b7fbf);
-   background: -o-linear-gradient(top, #26d1c8, #5b7fbf);
-   background-image: -ms-linear-gradient(top, #26d1c8 0%, #5b7fbf 100%);
-   color: #fff;
+   border: 1px solid #ffffff;
+   text-shadow: #6600ff 0 1px 0;
+   background: #ffffff;
+   background: -webkit-gradient(linear, left top, left bottom, from(#afb1f9), to(#ffffff));
+   background: -webkit-linear-gradient(top, #afb1f9, #ffffff);
+   background: -moz-linear-gradient(top, #afb1f9, #ffffff);
+   background: -ms-linear-gradient(top, #afb1f9, #ffffff);
+   background: -o-linear-gradient(top, #afb1f9, #ffffff);
+   background-image: -ms-linear-gradient(top, #afb1f9 0%, #ffffff 100%);
+   color: #000000;
    }
-   
 .optionbutton:active {
    text-shadow: #1e4158 0 1px 0;
-   border: 0px solid #0a3c59;
-   background: #65a9d7;
-   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#5b7fbf));
-   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
-   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
-   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
-   background: -o-linear-gradient(top, #3e779d, #65a9d7);
-   background-image: -ms-linear-gradient(top, #3e779d 0%, #65a9d7 100%);
-   color: #fff;
+   border: 1px solid #ffffff;
+   background: #afb1f9;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+   background: -webkit-linear-gradient(top, #ffffff, #afb1f9);
+   background: -moz-linear-gradient(top, #ffffff, #afb1f9);
+   background: -ms-linear-gradient(top, #ffffff, #afb1f9);
+   background: -o-linear-gradient(top, #ffffff, #afb1f9);
+   background-image: -ms-linear-gradient(top, #ffffff 0%, #afb1f9 100%);
+   color: #000000;
    }
+
+
