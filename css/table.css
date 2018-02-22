@@ -24,7 +24,8 @@
     table.type03 th.small {
     width: 50px;
     }
-    table.type03 td.small:hover + p.arrow_box{
+
+    td:hover + p.arrow_box{
     display: block;
     height: 13px;
     width: 110px;
