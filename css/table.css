@@ -10,8 +10,11 @@
     table.type03 th:hover {
     background-color: lightyellow;
     }   
-    table.type03 th.small:hover {
-    background-color: lightyellow;
+    table.type03 th.small:hover + p.arrow_box {
+    background-color: lightgreen;
+    display: block;
+    height: 13px;
+    width: 110px;
     }
   
     table.type03 {
