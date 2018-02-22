@@ -24,6 +24,12 @@
     table.type03 th.small {
     width: 50px;
     }
+    table.type03 th.small:hover + p.arrow_box{
+    display: block;
+    height: 13px;
+    width: 110px;
+    }
+
     table.type03 th.large {
     width: 200px;
     } 
@@ -46,4 +52,32 @@
     }
     table.type03 td.button{
     width : 30px;  
+    }
+
+    .arrow_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 7px;
+    background: #333;
+    color: #fff;
+    }
+    .arrow_box:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 12px;
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    border-color: rgba(51, 51, 51, 0);
+    border-bottom-color: #333;
+    border-width: 9px;
+    pointer-events: none;
+    content: " ";
     }
