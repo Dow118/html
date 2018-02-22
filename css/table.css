@@ -1,8 +1,16 @@
 
   @charset "utf-8";
 
-    
-    th:hover {
+    table.type03 tr:hover {
+    background-color: lightyellow;
+    }   
+    table.type03 tr.row:hover {
+    background-color: lightyellow;
+    }   
+    table.type03 th:hover {
+    background-color: lightyellow;
+    }   
+    table.type03 th.small:hover {
     background-color: lightyellow;
     }
   
