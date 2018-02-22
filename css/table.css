@@ -21,6 +21,9 @@
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     }
+    table.type03 th:hover {
+    background-color: lightyellow;
+    }
     table.type03 th.small {
     width: 50px;
     }
