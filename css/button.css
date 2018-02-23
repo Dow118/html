@@ -15,7 +15,7 @@
     .button:hover + p.arrow_box{
     display: block;
     height: 13px;
-    width: 130px;
+    width: 140px;
     }
 
     .arrow_box {
