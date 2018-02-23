@@ -97,7 +97,7 @@
                         <input type='submit' class='optionbutton' name='filterByCategory' value='null' >
                         </form></div></th>
                                 <th><span class='option' id=$order onmousemove=\"arrowbox_move(106)\" onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_date&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">등록일자</span><p class='arrow_box' id='106'>등록일 순 정렬</p>
-                                <span class='option' onmousemove=\"arrowbox_move(107)\" onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><p class='arrow_box' id='107'>날짜 기준 필터링</p><div class='option_hidden'>
+                                <span class='option' onmousemove=\"arrowbox_move(107)\" onclick=this.nextSibling.nextSibling.style.display=(this.nextSibling.nextSibling.style.display=='none')?'block':'none'; >▼</span><p class='arrow_box' id='107'>날짜 기준 필터링</p><div class='option_hidden'>
                                 <form method='get' action='./manage.html'>
                                 <input type='hidden' name='page' value='0'>";
                         
