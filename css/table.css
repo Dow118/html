@@ -4,18 +4,7 @@
     table.type03 tr:hover {
     background-color: lightyellow;
     }   
-    table.type03 tr.row:hover {
-    background-color: lightyellow;
-    }   
-    table.type03 th:hover {
-    background-color: lightyellow;
-    }   
-    table.type03 th.small:hover + p.arrow_box {
-    background-color: lightgreen;
-    display: block;
-    height: 13px;
-    width: 110px;
-    }
+ 
   
     table.type03 {
     border-collapse: collapse;
@@ -25,7 +14,6 @@
     border-left: 3px solid #369;
     margin : 20px 10px;
     }
-    
     
     table.type03 th {
     width: 115px;
