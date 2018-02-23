@@ -52,7 +52,7 @@
                         echo "<table class='type03' style='table-layout:fixed'><tr class='row'><th class='small'>
                                 <span class='option' id=$order onmousemove=\"arrowbox_move(100)\" onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_no&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">번 호</span><p class='arrow_box' id='100'>번호 순 정렬</p></th>
                                 <th><span class='option' id=$order onmousemove=\"arrowbox_move(101)\" onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_artist&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">아티스트</span><p class='arrow_box' id='101'>아티스트 순 정렬</p>
-                                <span class='option' onmousemove=\"arrowbox_move(102)\" onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><p class='arrow_box' id='102'>아티스트 기준 필터링</p><div class='option_hidden'>";
+                                <span class='option' onmousemove=\"arrowbox_move(102)\" onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><p class='arrow_box' id='102'>아티스트 필터링</p><div class='option_hidden'>";
         
                         $result_01 = mysqli_query($connect, "select distinct song_artist from info");
         
@@ -76,7 +76,7 @@
                                 <span class='option' id=$order onmousemove=\"arrowbox_move(103)\" onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_name&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">곡  명</span><p class='arrow_box' id='103'>이름 순 정렬</p></th>
                                 <th>주소값</th>
                                 <th><span class='option' id=$order onmousemove=\"arrowbox_move(104)\" onclick=\"this.id=(this.id=='asc')?'desc':'asc'; location.href='./manage.html?page=$page&order='+this.id+'&sortBy=song_category&filterByArtist=$filter_artist&filterByCategory=$filter_category&filterByDate_start=$filter_startdate&filterByDate_finish=$filter_finishdate'\">장 르</span><p class='arrow_box' id='104'>장르 순 정렬</p>
-                                <span class='option' onmousemove=\"arrowbox_move(105)\" onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><p class='arrow_box' id='105'>장르 기준 필터링</p><div class='option_hidden'>";
+                                <span class='option' onmousemove=\"arrowbox_move(105)\" onclick=this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none'; >▼</span><p class='arrow_box' id='105'>장르 필터링</p><div class='option_hidden'>";
         
                         $result_02 = mysqli_query($connect, "select distinct song_category from info");
         
