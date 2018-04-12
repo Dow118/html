@@ -1,5 +1,5 @@
 
-<? php
+<?php
 
 include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 
