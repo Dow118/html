@@ -8,10 +8,11 @@ $result = mysqli_query($connect, "select COUNT(user_id) from UOSRunner where use
 
 
 if($result){
-  if($result == 0)
-  echo "able"; 
+  $row=mysqli_fetch_row($result);
+  if($row[0] == 0)
+    echo "able"; 
   else
-  echo "unable";
+    echo "unable";
 }
 else
   echo "ERROR";
