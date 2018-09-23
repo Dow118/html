@@ -22,7 +22,7 @@ WHERE
 
 if($result){
   while($r = mysqli_fetch_assoc($result)){
-      echo json_encode($r);
+      echo json_encode($r, JSON_UNESCAPED_UNICODE);
   }
 }
 else
