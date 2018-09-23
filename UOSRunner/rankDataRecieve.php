@@ -9,7 +9,7 @@ $result = mysqli_query($connect,"SELECT * from UOSRunner");
 
 
 if($result){
-  while($r = mysql_fetch_assoc($result)){
+  while($r = mysql_fetch_array($result)){
       echo json_encode($r);
   }
 }
