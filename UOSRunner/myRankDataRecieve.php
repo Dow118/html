@@ -21,7 +21,7 @@ WHERE
 
 
 if($result){
-  while($r = mysql_fetch_assoc($result)){
+  while($r = mysqli_fetch_assoc($result)){
       echo json_encode($r);
   }
 }
