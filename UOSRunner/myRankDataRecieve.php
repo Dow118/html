@@ -17,7 +17,7 @@ ORDER BY
     a.user_score DESC
 ) result
 WHERE
-    result.user_id = '$id';);
+    result.user_id = '$id';");
 
 
 if($result){
