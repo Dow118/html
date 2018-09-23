@@ -17,8 +17,11 @@ LIMIT
 
 if($result){
   while($r = mysqli_fetch_assoc($result)){
-      echo json_encode($r);
+      $array_num = 0;
+      $array = array();
+      $array[array_num] = json_encode($r);
   }
+  echo $array;
 }
 
 else
