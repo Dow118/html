@@ -10,12 +10,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/dbconnect.php';
 $result = mysqli_query($connect, "select user_score from UOSRunner where user_id='$id'");
 $r = mysqli_fetch_row($result);
 
-$r = (int)$r;
-$score = (int)$score;
-
-if(is_numeric($r)&&is_numeric($score)){
-
-if($r<=$score){
+if((int)$r <= (int)$score){
+}
+else{
+    
     // 2. if BEST SCORE, register it.
     $result = mysqli_query($connect, "update UOSRunner set user_character='$character', user_score='$score' where user_id='$id'");
     
@@ -23,7 +21,8 @@ if($r<=$score){
         echo "complete";
     else
         echo "ERROR";
+    
 }
-}
+
 
 ?>
